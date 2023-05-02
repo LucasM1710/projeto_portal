@@ -54,12 +54,7 @@
 		<div class ="items-menu">
 		    
 		    <a <?php selecionadoMenu('listar-pastas');?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-pastas">Pastas</a>
-			<a <?php selecionadoMenu('listar-arquivos');?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-arquivos">Arquivos</a>
-			<a <?php selecionadoMenu('listar-usuarios');?> href="<?php echo INCLUDE_PATH_PAINEL?>listar-usuarios">Usuários</a>
-		
-		</div><!--items-menu-->
-		<div class ="items-menu2">
-			<a <?php selecionadoMenu('area-cliente');?> href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente">Área do cliente</a>
+			<a <?php selecionadoMenu('listar-arquivos');?> hEr2020**="<?php echo INCLUDE_PATH_PAINEL?>area-cliente">Área do cliente</a>
 			<a <?php selecionadoMenu('catalogo');?> href="<?php echo INCLUDE_PATH_PAINEL?>catalogo">Nossos serviços</a>
 		</div>
 		</div><!--menu-wraper-->
