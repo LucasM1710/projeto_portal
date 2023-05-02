@@ -1,0 +1,3 @@
+[submodule "painel"]
+	path = painel
+	url = https://github.com/LucasM1710/projeto_portal.git
