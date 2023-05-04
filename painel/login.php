@@ -43,39 +43,59 @@
 <body>
 <!--tela login início-->
 <div class="container">
-		<div class="img">
-			<img src="https://via.placeholder.com/500x500" alt="Imagem de fundo">
-		</div>
-		<div class="login-container">
-			<h1>Login</h1>
-			<form>
-				<div class="input-container">
-					<label for="username" class="icon-input">
-						<i class="fas fa-user"></i>
-					</label>
-					<input type="text" id="username" name="username" placeholder="Usuário" required>
-				</div>
-				<div class="input-container">
-					<label for="password" class="icon-input">
-						<i class="fas fa-lock"></i>
-					</label>
-					<input type="password" id="password" name="password" placeholder="Senha" required>
-				</div>
-				<div class="form-options">
-					<a href="#">Esqueceu a senha?</a>
-					<label>
-						<input type="checkbox" name="remember-me"> Mantenha-me conectado
-					</label>
-				</div>
-				<input type="submit" value="Entrar">
-			</form>
-			<div class="footer">
-				<a href="#"><i class="fab fa-facebook"></i></a>
-				<a href="#"><i class="fab fa-twitter"></i></a>
-				<a href="#"><i class="fab fa-instagram"></i></a>
-			</div>
-		</div>
+  <div class="img">
+    <img src="https://via.placeholder.com/500x500" alt="Imagem de fundo">
+  </div>
+
+  <div class="login-container">
+	<img src="../Img/logo3.png"/>
+	<br/>
+    <form>
+      <div class="input-container">
+        <label for="username" class="icon-input">
+          <span class="icon-box">
+            <i class="fas fa-user"></i>
+          </span>
+        </label>
+        <input type="text" id="username" name="username" placeholder="Usuário" required>
+      </div>
+      <div class="input-container">
+        <label for="password" class="icon-input">
+          <span class="icon-box">
+            <i class="fas fa-lock"></i>
+          </span>
+        </label>
+        <input type="password" id="password" name="password" placeholder="Senha" required>
+      </div>
+      <div class="input-container">
+        <a href="#">Esqueceu a senha?</a>
+        <label>
+          <input type="checkbox" name="remember-me"> Mantenha-me conectado
+        </label>
+      </div>
+      <input type="submit" value="Entrar">
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class="input-container">
+		<span class="term_priv">Termos e Condições</span>
+		<span class="term_priv">Política de Privacidade</span>
+		<span class="social">Siga-nos:</span>
+		<a href="#"><i class="fab fa-facebook"></i></a>
+		<a href="#"><i class="fab fa-linkedin"></i></a>
+		<a href="#"><i class="fab fa-instagram"></i></a>
+		<a href="#"><i class="fab fa-tiktok"></i></a>
+		<a href="#"><i class="fab fa-youtube"></i></a>
 	</div>
+    </form>
+
+  </div>
+</div>
+
+
 <!--tela login fim-->
 	
 		<!--

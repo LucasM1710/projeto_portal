@@ -5,92 +5,140 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-
-body {
-	background-color: #f2f2f2;
-}
-
-.container {
+  }
+  
+  body {
+	background-color: #ffffff;
+  }
+  
+  .container {
 	display: flex;
 	flex-wrap: wrap;
-}
-
-.img {
-	flex: 1;
+  }
+  
+  .img {
+	flex: 2;
 	height: 100vh;
 	background-color: #ccc;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.img img {
+  }
+  
+  .img img {
 	max-width: 100%;
 	max-height: 100%;
 	object-fit: cover;
-}
-
-.login-container {
-	flex: 1;
+  }
+  
+  .login-container {
+	flex: 3;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
-
-h1 {
+	text-align: center;
+  }
+  .login-container img{
+	  width: 20%;
+	  height: 17%;
+  }
+  h1 {
 	margin-bottom: 20px;
-}
-
-form {
+  }
+  
+  form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-
-.input-container {
+	width: 65%;
+  }
+  
+  .input-container {
 	display: flex;
 	align-items: center;
 	margin-bottom: 10px;
 	width: 100%;
-}
-
-.icon-input i {
-	margin-right: 10px;
-}
-
-input[type="text"], input[type="password"] {
-	padding: 15px;
+	position: relative;
+	justify-content: space-between;
+  }
+  
+  .icon-input {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0074d9;
+	color: #fff;
+	height: 50px;
+	width: 50px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	top: 0;
+	left: 0;
+  }
+  
+  .icon-input i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 20px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+	padding: 20px 20px 20px 70px;
 	margin: 0;
 	border: none;
 	border-radius: 5px;
-	box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 	flex-grow: 1;
-}
-
-input[type="text"] {
-	margin-right: 10px;
-}
-
-input[type="password"] {
-	margin-left: 10px;
-}
+	background-color: #ccc;
+	width: 100%;
+	padding-left: 60px;
+	height: 50px;
+  }
+  
+  input[type="text"] {
+	margin-right: 0;
+	margin-bottom: 10px;
+  }
+  
+  input[type="password"] {
+	margin-left: 0;
+	margin-bottom: 20px;
+  }
+  
 
 input[type="submit"] {
 	padding: 10px 20px;
-	background-color: #4CAF50;
+	background-color: #FFA500;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
-	top:20px;
+	width: 50%;
+	margin-top: 25px;
 }
-	
 
+  
+  .input-container a {
+	color:blue;
+  }	
 
+  .input-container .term_priv{
+	margin-right: 15px;
+	font-size: 11px;
+  }
+
+  .input-container .social{
+	margin-left: 100px;
+	font-size: 11px;
+  }
+ 
 
 
 /*Final da tela de login*/
