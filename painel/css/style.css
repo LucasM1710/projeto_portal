@@ -19,16 +19,23 @@
   .img {
 	flex: 2;
 	height: 100vh;
-	background-color: #ccc;
+	background-color: #0074d9;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	
+	
   }
   
   .img img {
 	max-width: 100%;
 	max-height: 100%;
-	object-fit: cover;
+	bottom: -170px;
+	left: -200px;
+	position: fixed;
+	
+	
   }
   
   .login-container {
@@ -39,11 +46,14 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	
   }
-  .login-container img{
-	  width: 20%;
-	  height: 17%;
+  
+  .login-container img {
+	width: 20%;
+	height: 17%;
   }
+  
   h1 {
 	margin-bottom: 20px;
   }
@@ -111,10 +121,9 @@
 	margin-bottom: 20px;
   }
   
-
-input[type="submit"] {
+  input[type="submit"] {
 	padding: 10px 20px;
-	background-color: #FFA500;
+	background-color: #ffa500;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
@@ -122,24 +131,62 @@ input[type="submit"] {
 	transition: background-color 0.3s ease;
 	width: 50%;
 	margin-top: 25px;
-}
-
+  }
   
   .input-container a {
-	color:blue;
-  }	
+	color: blue;
+  }
+  
+  .input-container .term_priv {
 
-  .input-container .term_priv{
-	margin-right: 15px;
 	font-size: 11px;
   }
 
-  .input-container .social{
-	margin-left: 100px;
-	font-size: 11px;
-  }
- 
+.term_priv:first-child {
+    margin-right: -10px;
+}
 
+.term_priv:last-child {
+    margin-left: -10px;
+}
+
+  .social {
+	margin-right: 10px;
+	font-size: 11px;
+	display: flex;
+	align-items: center;
+  }
+  
+  .social-icons {
+	display: flex;
+	align-items: center;
+	
+  }
+  .social-icons a{
+	margin-right: 5px;
+  }
+
+  
+  @media screen and (max-width: 768px) {
+	.img {
+	  flex: 1;
+	}
+	.login-container {
+	  flex: 1;
+	  margin-top: 50px;
+	}
+	form {
+	  width: 90%;
+	}
+	.input-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	  }
+	  .term_priv {
+		margin-bottom: 10px;
+	  }
+  
 
 /*Final da tela de login*/
 
