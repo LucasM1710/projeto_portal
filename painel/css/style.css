@@ -15,7 +15,7 @@
 	display: flex;
 	flex-wrap: wrap;
   }
-  
+ 
   .img {
 	flex: 2;
 	height: 100vh;
@@ -27,9 +27,30 @@
 	
 	
   }
+
+  .img h2{
+	text-align: center;
+	color: white;
+	position: relative;
+	bottom: 150px;
+	font-size: 47px;
+	font-weight: bold;
+	font-family: 'Montserrat';
+	letter-spacing: -2px;
+}
   
+.img p{
+	text-align: center;
+	color: white;
+	position: relative;
+	bottom: 110px;
+	font-family: 'Montserrat',sans-serif;
+	font-size: 13px;
+	font-weight:500;
+	line-height:1.2;
+}
   .img img {
-	max-width: 100%;
+	max-width: 66.3%;
 	max-height: 100%;
 	bottom: -170px;
 	left: -200px;
@@ -72,6 +93,10 @@
 	width: 100%;
 	position: relative;
 	justify-content: space-between;
+	font-family: 'Montserrat',sans-serif;
+	font-size: 13px;
+	font-weight:500;
+
   }
   
   .icon-input {
@@ -109,6 +134,9 @@
 	width: 100%;
 	padding-left: 60px;
 	height: 50px;
+	font-family: 'Montserrat',sans-serif;
+	font-size: 13px;
+	font-weight:500;
   }
   
   input[type="text"] {
@@ -126,11 +154,14 @@
 	background-color: #ffa500;
 	color: #fff;
 	border: none;
-	border-radius: 5px;
+	border-radius: 15px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 	width: 50%;
 	margin-top: 25px;
+	font-weight: bold;
+	font-family: 'Montserrat';
+	font-size: 22px;
   }
   
   .input-container a {
@@ -140,6 +171,7 @@
   .input-container .term_priv {
 
 	font-size: 11px;
+	font-family: 'Open Sans', sans-serif;
   }
 
 .term_priv:first-child {
@@ -155,6 +187,7 @@
 	font-size: 11px;
 	display: flex;
 	align-items: center;
+	font-family: 'Open Sans', sans-serif;
   }
   
   .social-icons {
@@ -166,7 +199,7 @@
 	margin-right: 5px;
   }
 
-  
+/*Responsivo*/
   @media screen and (max-width: 768px) {
 	.img {
 	  flex: 1;
@@ -187,7 +220,7 @@
 		margin-bottom: 10px;
 	  }
   
-
+/*Final responsivo*/
 /*Final da tela de login*/
 
 

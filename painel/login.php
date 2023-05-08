@@ -31,6 +31,13 @@
 	<meta name="viewport" content= "width=device-width, initial-scale=1.0">
 	<meta name="description" content="Consulte seus certificados emitidos e os padrões utilizados na sua calibração através da área do cliente.">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Open+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/all.css" > 
 	<link href="<?php echo INCLUDE_PATH_PAINEL?>css/style.css" rel="stylesheet"/>
 	<link rel="icon" href="../Img/logo3.png" type="image/x-icon" />
@@ -43,11 +50,25 @@
 <body>
 <!--tela login início-->
 <div class="container">
+		
 		<div class="img">
+		<div style="display: flex; flex-direction: column; line-height:1.5;">
+			<h2>Bem-vindo ao</h2>
+			<h2>portal do cliente!</h2>
+			<p>O portal do cliente da ER Analítica foi especialmente</p>
+			<p>desenvolvido para nossos clientes acessarem seus</p>
+			<p>certificados e padrões utilizados em suas calibrações.</p>
+		</div>
 			<img src="../Img/Cientista.png" alt="Imagem de fundo">
 		</div>
 
 		<div class="login-container">
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
 			<img src="../Img/logo3.png"/>
 			<br/>
 			<form>
@@ -73,7 +94,7 @@
 						<input type="checkbox" name="remember-me"> Mantenha-me conectado
 					</label>
 				</div>
-				<input type="submit" value="Entrar">
+				<input type="submit" value="ENTRAR">
 				<br/>
 				<br/>
 				<br/>
