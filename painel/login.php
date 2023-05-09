@@ -39,7 +39,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Open+Sans&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/all.css" > 
-	<link href="<?php echo INCLUDE_PATH_PAINEL?>css/style.css" rel="stylesheet"/>
+	<link href="<?php echo INCLUDE_PATH_PAINEL?>css/login.css" rel="stylesheet"/>
 	<link rel="icon" href="../Img/logo3.png" type="image/x-icon" />
 	<script src="https://www.google.com/recaptcha/api.js?hl=pt-BR"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -71,14 +71,14 @@
 			<br/>
 			<img src="../Img/logo3.png"/>
 			<br/>
-			<form>
+			<form method="post">
 				<div class="input-container">
 					<label for="username" class="icon-input">
 						<span class="icon-box">
 							<i class="fas fa-user"></i>
 						</span>
 					</label>
-					<input type="text" id="username" name="username" placeholder="Usuário" required>
+					<input type="text" id="username" name="user" placeholder="Usuário" required>
 				</div>
 				<div class="input-container">
 					<label for="password" class="icon-input">
@@ -89,12 +89,12 @@
 					<input type="password" id="password" name="password" placeholder="Senha" required>
 				</div>
 				<div class="input-container">
-					<a href="#">Esqueceu a senha?</a>
+					<a href="?esqueci" style="color:#6C6C6C; border-bottom: 2px solid #20446C; text-decoration:none;">Esqueceu a senha?</a>
 					<label>
-						<input type="checkbox" name="remember-me"> Mantenha-me conectado
+						<input type="checkbox" name="lembra" style="color:#6C6C6C;"> Mantenha-me conectado
 					</label>
 				</div>
-				<input type="submit" value="ENTRAR">
+				<input type="submit" value="ENTRAR" name="acao">
 				<br/>
 				<br/>
 				<br/>
@@ -107,11 +107,11 @@
 					
 					<div class="social-icons">
 						<span class="social">Siga-nos:</span>
-						<a href="#"><i class="fab fa-facebook"></i></a>
-						<a href="#"><i class="fab fa-linkedin"></i></a>
-						<a href="#"><i class="fab fa-instagram"></i></a>
-						<a href="#"><i class="fab fa-tiktok"></i></a>
-						<a href="#"><i class="fab fa-youtube"></i></a>
+						<a href="https://www.facebook.com/people/ER-Anal%C3%ADtica-Ltda/100067910112925/" target="_blank" style="color:#3F51B5"><i class="fab fa-facebook"></i></a>
+						<a href="https://www.linkedin.com/company/er-analitica" target="_blank" style="color:#0288D1"><i class="fab fa-linkedin"></i></a>
+						<a href="https://www.instagram.com/eranalitica/" target="_blank" style="color:#8E24AA"><i class="fab fa-instagram"></i></a>
+						<!--<a href="#" style="color:#212121"><i class="fab fa-tiktok"></i></a>-->
+						<a href="https://www.youtube.com/watch?v=0wic_fghow4" target="_blank" style="color:#FF3D00"><i class="fab fa-youtube"></i></a>
 					</div>
 				</div>
 			</form>
@@ -130,11 +130,11 @@
 				$password = $_POST['password'];
 				$sql = MySql::conectar()->prepare("SELECT * FROM `tb_usuarios` WHERE user = ? AND password = ?");
 				$sql->execute(array($user,$password));
-				/*if ($usuario[0]['Tipo'] == 0) {
+				if ($usuario[0]['Tipo'] == 0) {
 			        header("Location:cliente.php");
 			    } else if ($usuario[0]['Tipo'] == 1) {
 			        header("Location:main.php");
-			    }*/
+			    }
 			    /*$secret = "6LecJcobAAAAAAPlzWykSTCB250IKca_HkofgzZL";
 
 				$response = null;
@@ -197,7 +197,7 @@
 
 	</div>box-login-->
 
-<!--</body>
+</body>
 </html>
 <?php
 	
@@ -219,7 +219,7 @@
 	<meta name="viewport" content= "width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/all.css" > 
-	<link href="<?php echo INCLUDE_PATH_PAINEL?>css/style.css" rel="stylesheet"/>
+	<link href="<?php echo INCLUDE_PATH_PAINEL?>css/login.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -240,9 +240,9 @@
 		</form>
 	
 
-	</div>box-login-->
+	</div>
 	
-<!--</body>
-</html>-->
+</body>
+</html>
 
 <?php }?>
