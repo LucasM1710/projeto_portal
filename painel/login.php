@@ -87,16 +87,18 @@
 						</span>
 					</label>
 					<input type="password" id="password" name="password" placeholder="Senha" required>
+					
 				</div>
+				<div class="g-recaptcha" data-sitekey="6LecJcobAAAAANi9ZeF9QC_fTb1oJo-EgmWf4Jkp"></div>
+				<br/>
 				<div class="input-container">
 					<a class="esqueci" href="?esqueci" style="color:#6C6C6C; border-bottom: 2px solid #20446C; text-decoration:none;">Esqueceu a senha?</a>
 					<label class="check">
 						<input type="checkbox" name="lembra" style="color:#6C6C6C;"> Mantenha-me conectado
 					</label>
 				</div>
+				
 				<input type="submit" value="ENTRAR" name="acao">
-				<br/>
-				<br/>
 				<br/>
 				<br/>
 				<br/>
