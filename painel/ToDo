@@ -6,15 +6,16 @@ Tela de Login
 - Verificar se é uma boa subir a tela de login já(se sim(ajustar todo o painel e esqueceu a senha)) ok
 - Incluir o back-end (incluir esqueceu a senha) ok
 - Revisar ok
-- Responsividade Login
-    - 1848
-    - 1440
+- Responsividade Login ok
+    - 1848 ok
+    - 1440 ok
     - 1200 ok
     - 1024 ok
     - 768 ok
-    - 375
-    - 320
+    - 375 ok
+    - 320 ok
 - Revisar
-- Responsividade (Notebook(ok), Monitor(), mobile())
+- Responsividade (Notebook(ok), Monitor(ok), mobile(ok))ok
+- Link Termos e condições e politica de privacidade ok
 - Revisar
 

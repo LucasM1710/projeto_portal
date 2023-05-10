@@ -270,6 +270,64 @@
 
 
 /*Redimensionando width tela normal*/
+@media screen and (max-width: 1848px){
+	.img h2{
+		text-align: center;
+		color: white;
+		position: relative;
+		bottom: 300px;
+		font-size: 47px;
+		font-weight: bold;
+		font-family: 'Montserrat';
+		letter-spacing: -2px;
+		line-height:1.3;
+	}
+	  
+	.img p{
+		text-align: center;
+		color: white;
+		position: relative;
+		bottom: 240px;
+		font-family: 'Montserrat',sans-serif;
+		font-size: 13px;
+		font-weight:500;
+		line-height:1.2;
+	}
+	.login-container {
+        position: relative;
+        top:-80px;
+           
+      }
+}
+@media screen and (max-width: 1400px){
+	.img h2{
+		text-align: center;
+		color: white;
+		position: relative;
+		bottom: 200px;
+		font-size: 47px;
+		font-weight: bold;
+		font-family: 'Montserrat';
+		letter-spacing: -2px;
+		line-height:1.3;
+	}
+	  
+	.img p{
+		text-align: center;
+		color: white;
+		position: relative;
+		bottom: 140px;
+		font-family: 'Montserrat',sans-serif;
+		font-size: 13px;
+		font-weight:500;
+		line-height:1.2;
+	}
+	.login-container {
+        position: relative;
+        top:-60px;
+           
+      }
+}
 @media screen and (max-width: 1200px){
     .img {
         flex: 2;
@@ -454,5 +512,246 @@
 				}
 
 						
-			}		
+			}
+			@media (max-width: 500px) {
+
+				.img {
+					flex: 2;
+					height: 100vh;
+					background-image: url('../../Img/cientista_fundo.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: cover;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: relative;
+					font-family: 'Montserrat',sans-serif;
+				  }
+		
+				.container {
+					display: flex;
+					flex-direction: column;
+				}
+
+				.img h2,p{
+					opacity: 0;
+				}
+				.login-container {
+					position: relative;
+					top:-65px;	   
+				}
+				.login-container img {
+					width: 40%;
+					height: 12%;
+				}
+				.input-container .esqueci{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:130px;
+					font-size: 12.5px;
+				}
+				.input-container .check{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:80px;
+				}
+				.input-container input [type=checkbox]{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:70px;
+				}
+				.login-container input[type="submit"] {
+					top:-25px;
+					position: relative;
+					width: 100%;
+				}
+				.input-container .termos_e_politica {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					margin-top: 50px;
+				}
+				.term_priv:first-child {
+					margin-right: 0px;
+				}
+				
+				.term_priv:last-child {
+					margin-left: 0px;
+				}
+				.social-icons{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:55px;
+					
+					
+				}
+
+						
+			}			
+			
+			@media (max-width: 396px) {
+
+				.img {
+					flex: 2;
+					height: 100vh;
+					background-image: url('../../Img/cientista_fundo.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: cover;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: relative;
+					font-family: 'Montserrat',sans-serif;
+				  }
+		
+				.container {
+					display: flex;
+					flex-direction: column;
+				}
+
+				.img h2,p{
+					opacity: 0;
+				}
+				.login-container {
+					position: relative;
+					top:-65px;	   
+				}
+				.login-container img {
+					width: 40%;
+					height: 12%;
+				}
+				.input-container .esqueci{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:130px;
+				}
+				.input-container .check{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:80px;
+				}
+				.input-container input [type=checkbox]{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:70px;
+				}
+				.login-container input[type="submit"] {
+					top:-25px;
+					position: relative;
+					width: 100%;
+				}
+				.input-container .termos_e_politica {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					margin-top: 50px;
+				}
+				.term_priv:first-child {
+					margin-right: 0px;
+				}
+				
+				.term_priv:last-child {
+					margin-left: 0px;
+				}
+				.social-icons{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:55px;
+					
+					
+				}
+
+						
+			}	
+			
+			@media (max-width: 320px) {
+
+				.img {
+					flex: 2;
+					height: 100vh;
+					background-image: url('../../Img/cientista_fundo.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: cover;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: relative;
+					font-family: 'Montserrat',sans-serif;
+				  }
+		
+				.container {
+					display: flex;
+					flex-direction: column;
+				}
+
+				.img h2,p{
+					opacity: 0;
+				}
+				.login-container {
+					position: relative;
+					top:-65px;	   
+				}
+				.login-container img {
+					width: 40%;
+					height: 12%;
+				}
+				.input-container .esqueci{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:120px;
+				}
+				.input-container .check{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:80px;
+				}
+				.input-container input [type=checkbox]{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:70px;
+				}
+				.login-container input[type="submit"] {
+					top:-25px;
+					position: relative;
+					width: 100%;
+				}
+				.input-container .termos_e_politica {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					margin-top: 50px;
+				}
+				.term_priv:first-child {
+					margin-right: 10px;
+					
+				}
+				
+				.term_priv:last-child {
+					margin-left: 0px;
+				}
+				.social-icons{
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
+					top:55px;
+					
+					
+				}
+
+						
+			}	
 }

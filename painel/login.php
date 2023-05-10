@@ -105,8 +105,8 @@
 				<br/>
 				<div class="input-container">
 					<div class="termos_e_politica">
-						<span class="term_priv">Termos e Condições</span>
-						<span class="term_priv">Política de Privacidade</span>
+						<span class="term_priv"><a href="https://eranalitica.com.br/politica-de-privacidade/" target="_blank">Termos e Condições</a></span>
+						<span class="term_priv"><a href="https://eranalitica.com.br/politica-de-privacidade/" target="_blank">Política de Privacidade</a></span>
 					</div>
 					
 					<div class="social-icons">
