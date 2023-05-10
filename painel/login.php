@@ -59,7 +59,7 @@
 			<p>desenvolvido para nossos clientes acessarem seus</p>
 			<p>certificados e padrões utilizados em suas calibrações.</p>
 		</div>
-			<img src="../Img/Cientista.png" alt="Imagem de fundo">
+			
 		</div>
 
 		<div class="login-container">
@@ -89,8 +89,8 @@
 					<input type="password" id="password" name="password" placeholder="Senha" required>
 				</div>
 				<div class="input-container">
-					<a href="?esqueci" style="color:#6C6C6C; border-bottom: 2px solid #20446C; text-decoration:none;">Esqueceu a senha?</a>
-					<label>
+					<a class="esqueci" href="?esqueci" style="color:#6C6C6C; border-bottom: 2px solid #20446C; text-decoration:none;">Esqueceu a senha?</a>
+					<label class="check">
 						<input type="checkbox" name="lembra" style="color:#6C6C6C;"> Mantenha-me conectado
 					</label>
 				</div>
@@ -102,8 +102,10 @@
 				<br/>
 				<br/>
 				<div class="input-container">
-					<span class="term_priv">Termos e Condições</span>
-					<span class="term_priv">Política de Privacidade</span>
+					<div class="termos_e_politica">
+						<span class="term_priv">Termos e Condições</span>
+						<span class="term_priv">Política de Privacidade</span>
+					</div>
 					
 					<div class="social-icons">
 						<span class="social">Siga-nos:</span>
@@ -115,8 +117,10 @@
 					</div>
 				</div>
 			</form>
+			
 		</div>
 	</div>
+	
 
 
 <!--tela login fim-->

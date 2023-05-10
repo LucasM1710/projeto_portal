@@ -3,10 +3,15 @@ Tela de Login
 - Inserir imagem cientista + textos ok
 - Alterar fontes ok
 - Alterar cores ok
-- Verificar se é uma boa subir a tela de login já(se sim(ajustar todo o painel e esqueceu a senha))
-- Incluir o back-end (incluir esqueceu a senha)
-- Revisar
+- Verificar se é uma boa subir a tela de login já(se sim(ajustar todo o painel e esqueceu a senha)) ok
+- Incluir o back-end (incluir esqueceu a senha) ok
+- Revisar ok
 - Responsividade Login
+    - 1848
+    - 1440
+    - 1200 ok
+    - 1024 ok
+    - 768 ok
 - Revisar
 - Responsividade (Notebook(ok), Monitor(), mobile())
 - Revisar
