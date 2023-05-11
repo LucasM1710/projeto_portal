@@ -11,6 +11,43 @@
 ?>
 
 <div class="box-content">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+
+	<!--Criação do Modal-->
+	<!-- Botão para abrir o modal -->
+	
+
+	<!-- O Modal -->
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<!-- Cabeçalho do Modal -->
+				<div class="modal-header">
+					<h4 class="modal-title">Exemplo de Modal</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Corpo do Modal -->
+				<div class="modal-body">
+					<p>Este é um exemplo de modal interativo criado com Bootstrap.</p>
+				</div>
+
+				<!-- Rodapé do Modal -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!--Final do Modal-->
+
+
 <div class="nome-user">
 <h2>Olá, <?php echo $_SESSION['Nome']; ?></h2>
 </div>
@@ -198,3 +235,11 @@
 
 			</div>
 		</div>
+<!-- Incluindo o JavaScript do Bootstrap -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+	$('#myModal').modal('show');
+</script>

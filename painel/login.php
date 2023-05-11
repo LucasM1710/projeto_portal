@@ -98,7 +98,7 @@
 					</label>
 				</div>
 				
-				<input type="submit" value="ENTRAR" name="acao">
+				<input type="submit" value="ENTRAR" name="acao" >
 				<br/>
 				<br/>
 				<br/>
