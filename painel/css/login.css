@@ -432,6 +432,7 @@
 			left: 50%;
 			transform: translateX(-50%);
 			margin-top: 50px;
+			bottom: -130px;
 		}
 		.term_priv:first-child {
 			margin-right: -20px;
@@ -444,7 +445,7 @@
 			position: absolute;
 			left: 50%;
 			transform: translateX(-50%);
-			top:55px;
+			top:150px;
 			padding-bottom: 25px;
 			
 			
@@ -506,7 +507,7 @@
 					position: absolute;
 					left: 50%;
 					transform: translateX(-50%);
-					top:55px;
+					top:150px;
 					
 					
 				}
@@ -586,7 +587,7 @@
 					position: absolute;
 					left: 50%;
 					transform: translateX(-50%);
-					top:55px;
+					top:150px;
 					
 					
 				}
@@ -666,7 +667,7 @@
 					position: absolute;
 					left: 50%;
 					transform: translateX(-50%);
-					top:55px;
+					top:150px;
 					
 					
 				}
@@ -747,7 +748,7 @@
 					position: absolute;
 					left: 50%;
 					transform: translateX(-50%);
-					top:55px;
+					top:150px;
 					
 					
 				}
