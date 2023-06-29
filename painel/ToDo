@@ -20,14 +20,49 @@ Tela de Login
 - Revisar ok
 
 ****************************************************************************************************
+Atualizaçaão 0.0.1
+
 Tela Inicial Area do Cliente(Apenas para cliente){
-- Criando menu header
-- Trabalhar em validações para quando for cliente ou adm 
-- Cabeçalho (sem foto user)
-- Estrutura inicial área do Cliente
-- Agregar links |Saber Mais|, |Solicitar Orçamento|, |Certificados|
-- Verificar como será acessado |Padrões|
-- Aplicar responsivo
+- Criando menu header{
+    - Posicionar elementos OK
+    - Ajustar cores e fonte
+    - Colocar link das páginas
 }
+- Trabalhar em validações para quando for cliente ou adm
+- Ajustar fontes e tamanho, cores
+- Aplicar responsivo
+- Testar
+---------------------------------------------------------------------- 
+- Criando Body (imagem área do cliente + tabela){
+    - Posionar elemento de área do cliente (link saber mais + botão Entrar em contato/solicitar orçamento)
+    - Incluir elementos de texto e imagens para consultar certificados e padrões(verificar como obter essa informação e se será possível)
+}
+- Ajustar fontes e tamanho, cores
+- Aplicar responsivo
+- Testar
+-----------------------------------------------------------------------------
+- Criar uma nova formatação para tabela com base no layout{
+    - Verificar como vamos trabalhar com a paginação
+} 
+- Ajustar fontes e tamanho, cores
+- Aplicar responsivo
+- Testar
+----------------------------------------------------------------------------
+Atualização 0.0.2
+
+História:
+O Cliente ao entrar na área do cliente, ele GOSTARIA de ter uma opção para inserir uma foto de perfil
+
+Desenvolvimento:
+- Na tabela de usuário criar uma coluna para 'imagem'
+- Marcar o html no header para posicionar o local que vai ficar a foto, agregar um css para formato e tamanho que ficará a foto
+- Desenvolver todo o back-end para cadastro, alteração e exclusão da foto{
+    - Criar as validações para tipo e tamanho de imagem a ser cadastrada(O CLIENTE NÃO PODE INSERIR UM ARQUIVO .xlsx, .pdf, etc no perfil)
+}
+
+
+
+
+
 
 
