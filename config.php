@@ -29,7 +29,7 @@
 	define('HOST','localhost');
 	define('USER','root');
 	define('PASSWORD','');
-	define('DATABASE','portal');
+	define('DATABASE','abril');
 
 	//Constantes para o painel de controle
 	define('NOME_EMPRESA','Lpaynnel');

@@ -12,40 +12,40 @@
 
 <div class="box-content">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-
-
-	<!--Criação do Modal-->
-	<!-- Botão para abrir o modal -->
 	
 
-	<!-- O Modal -->
-	<div class="modal" id="myModal">
-		<div class="modal-dialog">
-			<div class="modal-content">
 
-				<!-- Cabeçalho do Modal -->
-				<div class="modal-header">
-					<h4 class="modal-title">Exemplo de Modal</h4>
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-				</div>
+<!--Criação do Modal-->
 
-				<!-- Corpo do Modal -->
-				<div class="modal-body">
-					<p>Este é um exemplo de modal interativo criado com Bootstrap.</p>
-				</div>
+<!-- Botão para abrir o modal -->
 
-				<!-- Rodapé do Modal -->
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-				</div>
 
+<!-- O Modal
+<div class="modal" id="myModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+		 Cabeçalho do Modal
+			<div class="modal-header">
+				<h4 class="modal-title">Estamos atualizando a área do cliente.</h4>
 			</div>
+
+			Corpo do Modal 
+			<div class="modal-body">
+				<p>Nosso site está recebendo atualizações em tempo real! Estamos trabalhando para tornar sua experiência ainda melhor.</p>
+				<img src='../Img/construcao.png'/>
+			</div>
+			 Rodapé do Modal
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			</div>
+			
+
 		</div>
 	</div>
+</div>
 
-	<!--Final do Modal-->
+Final do Modal-->
 
 
 <div class="nome-user">

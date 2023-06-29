@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Danki Code - Os Melhores Cursos de Programação do Brasil</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="author" content="Danki Code - Guilherme Grillo">
+<meta name="description" content="Danki Code - Mais de 60 mil alunos - Programação Web, Games e Marketing Digital." />
+<meta name="keywords" content="desenvolvimento web,seo,marketing digital,programação,cursos online,web design,front-end,web developer,back-end,php" />
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#483079">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta property="og:title" content="Danki Code - Cursos Online">
+<meta property="og:site_name" content="Danki Code">
+<meta property="og:description" content="Danki Code - Mais de 60 mil alunos - Programação Web, Games e Marketing Digital.">
+<meta property="og:url" content="https://cursos.dankicode.com">
+<meta property="og:image" content="https://cursos.dankicode.com/og-img.jpg">
+<meta property="og:image:type" content="image/jpeg">
+
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+<link href="https://cursos.dankicode.com/app/Views/public/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://cursos.dankicode.com/app/Views/public/css/style.css" rel="stylesheet">
+<link rel='manifest' href='/manifest.json'>
+<link rel="icon" href="https://cursos.dankicode.com/app/Views/public/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93023897-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<base base="https://cursos.dankicode.com/" />
+<header>
+<div class="center">
+<div class="logo-desktop">
+<a href="https://cursos.dankicode.com/"></a>
+</div>
+<div class="grp-header">
+<nav class="desktop">
+<ul>
+<li><a href="https://cursos.dankicode.com/home">Home</a></li>
+<li><a href="https://cursos.dankicode.com/empresa">A Empresa</a></li>
+<li><a href="https://cursos.dankicode.com/certificados">Certificados</a></li>
+<li><a href="https://cursos.dankicode.com/loja">Loja</a></li>
+<li><a href="http://blog.dankicode.com">Blog</a></li>
+<li><a href="https://cursos.dankicode.com/forum">Fórum</a></li>
+
+</ul>
+</nav>
+<div class="info-user-btn">
+<a class="btn1 campus_btn" href="https://cursos.dankicode.com/campus">Campus</a>
+<a class="btn2" href="https://cursos.dankicode.com/conta">Minha Conta</a>
+<a class="sair-btn" href="https://cursos.dankicode.com/?loggout">Sair</a>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</header>
+<div class="header-mobile">
+<div class="center">
+<div class="logo-mobile">
+<a href="https://cursos.dankicode.com/"></a>
+</div>
+<div class="icon-mobile-menu"></div>
+<div class="clear"></div>
+</div>
+</div>
+<nav class="menu-mobile">
+<ul>
+<li><a href="https://cursos.dankicode.com/home">Home</a></li>
+<li><a href="https://cursos.dankicode.com/empresa">A Empresa</a></li>
+<li><a href="https://cursos.dankicode.com/loja">Loja</a></li>
+<li><a href="http://blog.dankicode.com">Blog</a></li>
+<li><a href="https://cursos.dankicode.com/forum">Fórum</a></li>
+
+<li><a href="https://cursos.dankicode.com/certificados">Certificados</a></li>
+</ul>
+</nav>
+<section style="padding:40px 2%;" class="cadastro-sugestao">
+<div style="height:64px;background-image:url('https://cursos.dankicode.com/app/Views/public/images/campus/diploma-white.png');background-size:64px 64px;" class="icon-matricula"></div>
+<h2 style="margin:15px auto;">Atualize/Insira seus dados para gerar seu certificado do<br /><font color="#e7426b">Curso Agência Web de Sucesso</font></h2>
+</section>
+<section class="cadastro">
+<div class="center">
+<form method="post">
+<h2>Nome Completo
+<p style="font-size:12px;">Ex: Guilherme C. Grillo</p>
+</h2>
+<div class="input-form-login">
+<div style="background-image:url(https://cursos.dankicode.com/app/Views/public/images/header/user-form.png)" class="icon-form"></div>
+<input required type="text" value="LUCAS MATHEUS DE CAMPOS SILVA" name="nome">
+<div class="clear"></div>
+</div>
+<h2>CPF</h2>
+<div class="input-form-login">
+<div style="background-image:url(https://cursos.dankicode.com/app/Views/public/images/header/user-form.png);" class="icon-form"></div>
+<input required type="text" name="cpf" value="389.112.298-57">
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<input style="width:auto;padding:0 30px;" type="submit" name="acao" value="Gerar Certificado">
+<div class="clear"></div>
+</form>
+</div>
+</section><footer class="footer1">
+<div class="center">
+<div class="footer-section">
+<h2>Sobre a Danki Code</h2>
+<p style="text-align: left;">A Danki Code é uma empresa de desenvolvimento web e também atua na área de cursos online voltados também ao assunto.
+Sediada em Florianópolis, desenvolve soluções inovadoras para empresas e também forma profissionais capacitados e completos para a área de TI.
+<p style="text-align: left;">Plataforma Desenvolvida com <i class="fa fa-heart"></i> por Danki Code.
+<br />
+<br />
+É proibida a reprodução ou distribuição do conteúdo publicado aqui.</p>
+</p>
+<p style="text-align: left;"><a style="color: white; font-size: 20px; padding:0 10px;" target="_blank" href="https://instagram.com/dankicodeoficial"><i class="fa fa-instagram"></i></a> <a style="color: white; font-size: 20px; padding:0 10px;" target="_blank" href="https://youtube.com/dankicode"><i class="fa fa-youtube"></i></a> <a style="color: white; font-size: 20px; padding:0 10px;" target="_blank" href="https://facebook.com/dankicode"><i class="fa fa-facebook"></i></a></p>
+<br />
+<a target="_blank" href="https://apps.apple.com/br/app/danki-code-cursos-online/id1522964106"><img style="max-width: 150px;" src="https://cursos.dankicode.com/app/Views/public/images/appstoreicon.png" /></a>
+<a target="_blank" href="https://play.google.com/store/apps/details?id=com.app.dankicode.com"><img style="max-width: 150px;" src="https://cursos.dankicode.com/app/Views/public/images/googleplayicon.png" /></a>
+</div>
+<div class="footer-section">
+<h2>Atendimento ao cliente</h2>
+<div class="footer-ww">
+<div style="background-image: url('https://cursos.dankicode.com/app/Views/public/images/footer/icon_mail.png');height:15px;" class="icon-footer"></div>
+<p><b>E-mail: </b><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81e0f5e4efe5e8ece4eff5eec1e5e0efeae8e2eee5e4afe2eeec">[email&#160;protected]</a></p>
+<div class="clear"></div>
+</div>
+<div class="footer-ww">
+<div style="background-image: url('https://cursos.dankicode.com/app/Views/public/images/footer/icon_tel.png');" class="icon-footer"></div>
+<p><b>Telefone/WhatsApp: </b>(48) 99807-5162</p>
+<div class="clear"></div>
+</div>
+<div class="footer-ww">
+<div style="background-image: url('https://cursos.dankicode.com/app/Views/public/images/footer/icon_clock.png');background-size: 100% 100%;" class="icon-footer"></div>
+<p>De segunda a domingo</p>
+<div class="clear"></div>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</footer>
+<footer class="footer2">
+<div class="center">
+<div class="left-footer2">
+<a target="_blank" href="http://www.dankicode.com"><img src="https://cursos.dankicode.com/app/Views/public/images/danki_logo.png" /></a>
+</div>
+<div class="clear"></div>
+</div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cursos.dankicode.com/app/Views/public/js/jquery.js"></script>
+<script src="https://cursos.dankicode.com/app/Views/public/js/jquery.ajaxform.js"></script>
+<script src="https://cursos.dankicode.com/app/Views/public/js/constants.js"></script>
+<script src="https://cursos.dankicode.com/app/Views/public/js/menu_mobile.js"></script>
+<script src="https://cursos.dankicode.com/app/Views/public/js/header.js"></script>
+<script src="https://cursos.dankicode.com/app/Views/public/js/autoscroll.js"></script>
+<script src="https://cursos.dankicode.com/app/Views/public/js/jquery.mask.js"></script>
+<script src="https://cursos.dankicode.com/app/Views/public/js/campus.js"></script>
+<script type="module">
+import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+const el = document.createElement('pwa-update');
+document.body.appendChild(el);
+</script>
+</body>
+</html>

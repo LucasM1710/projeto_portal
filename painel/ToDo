@@ -20,10 +20,14 @@ Tela de Login
 - Revisar ok
 
 ****************************************************************************************************
-Pop UP (Site em manutenção)
-- Criar a interação (telas cliente e adm)
-    -area-cliente.php
-    
-- Adicionar elementos (textos, cores e imagem)
+Tela Inicial Area do Cliente(Apenas para cliente){
+- Criando menu header
+- Trabalhar em validações para quando for cliente ou adm 
+- Cabeçalho (sem foto user)
+- Estrutura inicial área do Cliente
+- Agregar links |Saber Mais|, |Solicitar Orçamento|, |Certificados|
+- Verificar como será acessado |Padrões|
+- Aplicar responsivo
+}
 
 

@@ -2,6 +2,41 @@
 	verificaPermissaoMenu(2);
 
 ?>
+
+
+
+
+<!--Criação do Modal-->
+
+<!-- Botão para abrir o modal -->
+
+
+<!-- O Modal
+<div class="modal" id="myModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			Cabeçalho do Modal 
+			<div class="modal-header">
+				<h4 class="modal-title">Estamos atualizando a área do cliente.</h4>
+			</div>
+
+			 Corpo do Modal 
+			<div class="modal-body">
+				<p>Nosso site está recebendo atualizações em tempo real! Estamos trabalhando para tornar sua experiência ainda melhor.</p>
+				
+			</div>
+			 Rodapé do Modal 
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			</div>
+			
+
+		</div>
+	</div>
+</div>
+
+Final do Modal-->
 <div class="position">
 		<div class="box-arquivo">
 			<?php
@@ -76,3 +111,11 @@
 		</div>
 
 </div>
+<!-- Incluindo o JavaScript do Bootstrap -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+	$('#myModal').modal('show');
+</script>

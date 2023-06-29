@@ -1,0 +1,28 @@
+conversion_identifier - {{random.guid}}
+name - {{contact.name}}
+nome- {{nome}}
+conversion_time - {{calendar.datetime}}
+/***********************************************/
+ https://http.msging.net/commands
+Authorization - Key ZXJhbmFsaXRpY2E6dEpaMHVISm5sdzlxUDB4ZG5xUEk=
+Content-Type - application/json
+
+
+
+{
+    "id": "{{random.guid}}",
+    "to": "postmaster@analytics.msging.net",
+    "method": "set",
+    "type": "application/vnd.iris.eventTrack+json",
+    "uri": "/event-track",
+    "resource": {
+        "category": "lead",
+        "action": "create",
+        "extras": {
+            "conversion_identifier": "{{random.guid}}",
+            "name": "{{contact.name}}",
+            "nome": "{{nome}}",
+            "conversion_time": "{{calendar.datetime}}"
+        }
+    }
+}
