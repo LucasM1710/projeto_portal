@@ -18,11 +18,15 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/all.css" > 
+	<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>estilo/all.css" >  
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/css/default/zebra_datepicker.min.css">
 	<link href="<?php echo INCLUDE_PATH_PAINEL?>css/style.css" rel="stylesheet"/>
 	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 	<link rel="icon" href="../Img/logo3.png" type="image/x-icon" />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-SGEXYHZ2C9"></script>
     <script>
@@ -46,49 +50,88 @@
     
 	<base base="<?php echo INCLUDE_PATH_PAINEL; ?>"/>
 	<!--Início menu-->
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
-		<div class="container-fluid" >
-		<a class="navbar-brand" href="#">
+	<nav class="navbar navbar-expand-lg">
+		<div class="container-fluid">
+		<a class="navbar-brand" href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente">
       	<img src="../Img/logo.png" alt="Logo" width="100" height="60" class="d-inline-block align-text-top">
     	</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent" style="font-size: 13px;">
-			<ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-				
+			<ul class="navbar-nav mx-auto mb-2 mb-lg-0" >
+				<!--HOME-->
 				<li class="nav-item mx-3">
-				<a class="nav-link active" aria-current="page" href="#">HOME</a>
+				<a class="nav-link active" aria-current="page" href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente" style="font-family: 'Montserrat',sans-serif; font-size:15px;">HOME</a>
 				</li>
-				<li class="nav-item mx-3">
-				<a class="nav-link active" aria-current="page" href="#">SERVIÇOS</a>
-				</li>
-				<li class="nav-item mx-3">
-				<a class="nav-link active" aria-current="page" href="#">BLOG</a>
-				</li>
-				<li class="nav-item mx-3">
-				<a class="nav-link active" aria-current="page" href="#">SUPORTE</a>
-				</li>
-				<li class="nav-item mx-3">
-				<a class="nav-link active" aria-current="page" href="#">FALE CONOSCO</a>
-				</li>
+
+				<!--SERVICOS-->
 				<li class="nav-item dropdown mx-3">
-				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					Nossos serviços
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: 'Montserrat',sans-serif; font-size:15px;">
+					SERVIÇOS
 				</a>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#">Action</a></li>
-					<li><a class="dropdown-item" href="#">Another action</a></li>
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/calibracao-rbc/">Calibração RBC</a></li>
 					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="#">Something else here</a></li>
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/calibracao-rastreavel/">Calibração Rastreável</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/manutencao-preventiva/">Manutenção Preventiva</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/manutencao-corretiva/">Manutenção Corretiva</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/servico-do-dia/">Serviço do Dia</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/visita-tecnica/">Visita Técnica</a></li>
 				</ul>
+				</li>
+
+				<!--SOBRE NÓS-->
+				<li class="nav-item dropdown mx-3">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: 'Montserrat',sans-serif; font-size:15px;">
+					SOBRE NÓS
+				</a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/quem-somos/">Quem Somos</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/qualidade/">Qualidade</a></li>	
+				</ul>	
+				</li>
+
+				<!--BLOG-->
 				<li class="nav-item mx-3">
-				<a class="nav-link active" aria-current="page" href="#">SAIR</a>
+				<a class="nav-link active" aria-current="page" target="_blank" href="https://eranalitica.com.br/blog/" style="font-family: 'Montserrat',sans-serif; font-size:15px;">BLOG</a>
 				</li>
+
+				<!--SUPORTE-->
+				<li class="nav-item dropdown mx-3">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: 'Montserrat',sans-serif; font-size:15px;">
+					SUPORTE
+				</a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/envio-de-equipamentos/">Envio de Equipamentos - Catálogos</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/materiais-gratuitos/">Materiais Gratuitos</a></li>	
+				</ul>	
 				</li>
-				
+
+				<!--FALE CONOSCO-->
+				<li class="nav-item dropdown mx-3">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: 'Montserrat',sans-serif; font-size:15px;">
+					FALE CONOSCO
+				</a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/contato/">Contato</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" target="_blank" style="font-family: 'Montserrat',sans-serif; font-size:15px;" href="https://eranalitica.com.br/sac/">SAC</a></li>	
+				</ul>	
+				</li>
+
+				<!--SAIR-->
+				<li class="nav-item mx-3">
+				<a  href="<?php echo INCLUDE_PATH_PAINEL?>?loggout"><button type="button" class="btn btn-danger" style="font-family: 'Montserrat'">SAIR <i class="fa fa-times-circle" aria-hidden="true"></i></button></a>
+				</li>
 			</ul>
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" target="_blank" href="https://eranalitica.com.br/wp-content/uploads/2021/02/CERTIFICADO-CAL-0715-ER-ANALITICA.pdf">
       		<img src="../Img/rbc.png" alt="Logo" width="43" height="74" class="d-inline-block align-text-top">
     		</a>
 			</div>

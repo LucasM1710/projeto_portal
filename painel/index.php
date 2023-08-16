@@ -6,7 +6,12 @@ ob_start();
 		include('login.php');
 	}
     else{
-    	include('main.php');
+		if($_SESSION['tipo'] == 2){
+			include('main_antigo.php');
+		}
+		else{
+    		include('main.php');
+		}
            //redirecionando para pagina conforme o tipo do usuário
 			    /*
 			    }*/
