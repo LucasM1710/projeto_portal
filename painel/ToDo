@@ -28,13 +28,14 @@ Tela Inicial Area do Cliente(Apenas para cliente){
     - Ajustar cores e fonte OK
     - Colocar link das páginas OK
 }
-- Trabalhar em validações para quando for cliente ou adm
-- Ajustar fontes e tamanho, cores
-- Aplicar responsivo
-- Testar
+- Trabalhar em validações para quando for cliente ou adm (verificar validações que há necessidade de passar um id na url) OK
+- Ajustar fontes e tamanho, cores ok
+- Aplicar responsivo OK
+- Testar OK
 ---------------------------------------------------------------------- 
 - Criando Body (imagem área do cliente + tabela){
-    - Posionar elemento de área do cliente (link saber mais + botão Entrar em contato/solicitar orçamento)
+    - Posionar elemento de área do cliente (link saber mais + botão Entrar em contato/solicitar orçamento) OK
+        - Verificar links dos botões e valores do banco de dados (Posicionar nome do usuário) OK
     - Incluir elementos de texto e imagens para consultar certificados e padrões(verificar como obter essa informação e se será possível)
 }
 - Ajustar fontes e tamanho, cores
@@ -59,6 +60,17 @@ Desenvolvimento:
 - Desenvolver todo o back-end para cadastro, alteração e exclusão da foto{
     - Criar as validações para tipo e tamanho de imagem a ser cadastrada(O CLIENTE NÃO PODE INSERIR UM ARQUIVO .xlsx, .pdf, etc no perfil)
 }
+
+----------------------------------------------------------------------------
+Atualização 0.0.3
+
+História:
+O Cliente ao entrar na área do cliente, ele GOSTARIA de visualizar o seu nome e o nome da empresa no site
+
+Desenvolvimento:
+- Na tabela de usuário criar uma coluna para 'nome da empresa'
+- Marcar o html no header para posicionar o local que vai ficar a foto
+- Desenvolver todo o back-end para cadastro, alteração do nome da empresa
 
 
 

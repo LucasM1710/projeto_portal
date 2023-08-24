@@ -2,6 +2,7 @@
 <?php
 	verificaPermissaoMenu(2);
 	verificaPermissaoMenuC(1);
+	verificaPermissaoPagina(2);
 
 	/*if(isset($_GET['deletar'])){
 		$idExcluir = (int)$_GET['deletar'];

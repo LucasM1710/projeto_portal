@@ -1,13 +1,14 @@
 <?php
 	verificaPermissaoMenu(2);
-
+	verificaPermissaoPagina(2);
 ?>
 <?php
 
 	if(isset($_GET['id'])){
+		
 		$id = (int)$_GET['id'];
 		$arquivo = Painel::select('tb_calibracao','id = ?',array($id));
-
+		
 	}else{
 		Painel::alert('erro','Você precisa de um parâmeto ID.');
 		die();

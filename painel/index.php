@@ -8,6 +8,7 @@ ob_start();
     else{
 		if($_SESSION['tipo'] == 2){
 			include('main_antigo.php');
+			
 		}
 		else{
     		include('main.php');

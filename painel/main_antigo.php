@@ -228,11 +228,12 @@
 
 
 	</header>
+	
 	<div class="content">
 		<?php Painel::carregarPagina();?>
 
 	</div><!--content-->
-	
+
 	<script src="<?php echo INCLUDE_PATH?>js/jquery.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/zebra_datepicker@latest/dist/zebra_datepicker.min.js"></script>
 	<script src="<?php echo INCLUDE_PATH_PAINEL?>js/jquery.maskMoney.js"></script>

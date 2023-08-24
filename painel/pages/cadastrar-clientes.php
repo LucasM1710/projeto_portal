@@ -1,6 +1,7 @@
 
 <?php
 	verificaPermissaoMenu(1);
+	verificaPermissaoPagina(2);
 
 ?>
 <div class="box-content">

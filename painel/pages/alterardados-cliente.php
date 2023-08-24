@@ -1,5 +1,6 @@
 <?php
 	verificaPermissaoMenuC(1);
+	verificaPermissaoPagina(2);
 
 	if(isset($_GET['loggout'])){
 		Painel::loggout();

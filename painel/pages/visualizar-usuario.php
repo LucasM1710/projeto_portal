@@ -1,5 +1,6 @@
 <?php
 	verificaPermissaoMenu(1);
+	verificaPermissaoPagina(2);
 
 ?>
 <?php

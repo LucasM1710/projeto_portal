@@ -140,8 +140,28 @@
 		</div>
 	</nav>
 	<!--Final menu-->
+	<div class="saudacao">
+	<h4 class="text-md-end">Bem-vindo(a), <?php echo $_SESSION['Nome']; ?></h4>
+	<!--<h4 class="text-md-end">ER Analítica</h4>-->
+	</div>
+
+	<div class="card" style="width: calc(100% - 200px); position: relative; top: 70px; left: 50%; transform: translateX(-50%); padding: 3%; background-image: url('../Img/body_calibracao.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="card-body">
+        <h2 class="card-title" style="font-weight: bold; font-family: 'Montserrat'; font-size:35px; color:#20446C;">Área do cliente</h2>
+        <p class="card-text" style="font-weight: regular; font-family: 'Montserrat'; font-size:17px; color:#20446C;">Precisa atualizar sua calibração?</p>
+		<p class="card-text" style="font-weight: regular; font-family: 'Montserrat'; font-size:17px; color:#20446C;">Solicite seu orçamento!</p>
+        <a target="_blank" href="https://eranalitica.com.br/?utm_source=area-do-cliente&utm_medium=area-do-cliente&utm_campaign=area-do-cliente&utm_id=saiba-mais" class="btn btn-primary" style="background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; font-size:15px; border-color:#EFAF11;">Saber mais</a>
+    </div>
+	
+	</div>
+	<div class="d-flex justify-content-center align-items-center" style="height: 35vh;">
+		<a target="_blank" href="https://eranalitica.com.br/calibracao-equipamentos/?utm_source=area-do-cliente&utm_medium=area-do-cliente&utm_campaign=area-do-cliente&utm_id=solicite-orcamento" class="btn btn-primary" style="width: 50%; background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; font-size:15px; border-color:#EFAF11;">Entrar em contato/Solicitar orçamento</a>
+	</div>
+
+
 	
 
+	
 
 	<div class="content">
 		<?php Painel::carregarPagina();?>

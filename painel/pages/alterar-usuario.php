@@ -1,11 +1,12 @@
 <?php
 	verificaPermissaoMenu(2);
-
+	verificaPermissaoPagina(2);
 ?>
 <?php
 
 	if(isset($_GET['id'])){
 		$id = (int)$_GET['id'];
+		
 		$usuario = Painel::select('tb_usuarios','id = ?',array($id));
 
 

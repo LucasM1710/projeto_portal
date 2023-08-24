@@ -2,6 +2,7 @@
 <?php
 	verificaPermissaoMenu(2);
 	verificaPermissaoMenuC(1);
+	verificaPermissaoPagina(2);
 
 ?>
 <?php

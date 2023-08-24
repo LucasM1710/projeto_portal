@@ -1,6 +1,7 @@
 <?php
 	verificaPermissaoMenu(2);
 	verificaPermissaoMenuC(1);
+	verificaPermissaoPagina(2);
 	if(isset($_GET['id'])){
 		$id = (int)$_GET['id'];
 		$arquivo = Painel::select('tb_pastas','id = ?',array($id));

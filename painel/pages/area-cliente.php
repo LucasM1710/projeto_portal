@@ -1,21 +1,23 @@
 <?php
 	verificaPermissaoMenuC(1);
-
+	
 	if(isset($_GET['loggout'])){
 		Painel::loggout();
 	}
-
+	
 
 	
 
 ?>
 
+
+<!--
 <div class="box-content">
 
 	
 
 
-<!--Criação do Modal-->
+Criação do Modal-->
 
 <!-- Botão para abrir o modal -->
 
@@ -47,7 +49,7 @@
 
 Final do Modal-->
 
-
+<!--
 <div class="nome-user">
 <h2>Olá, <?php echo $_SESSION['Nome']; ?></h2>
 </div>
@@ -59,7 +61,7 @@ Final do Modal-->
 			<input placeholder ="Procure pelo nome da pasta..." type = "text" name = "busca">
 			<input type="submit" name="acao" value="Buscar">	
 		</form>
-</div><!--busca-->
+</div>busca-->
 <?php
 	
 	$empresa = $_SESSION['Empresa'];
@@ -92,6 +94,7 @@ Final do Modal-->
 			//$nomePasta = Painel::select('tb_pastas','id=?',array($value['pasta_id']))['nome'];
 							
 		?>	
+		<!--
 				<div class="pastasedit">
 				<a class="btn edit" style="background: white; font-size: 50px;" href="<?php echo INCLUDE_PATH_PAINEL ?>pastas?id=<?php echo $value['id'];?>"><i class="fas fa-folder"></i></a> <?php echo $value['nome'];?>
 				<hr>
@@ -235,11 +238,12 @@ Final do Modal-->
 
 			</div>
 		</div>
-<!-- Incluindo o JavaScript do Bootstrap -->
+Incluindo o JavaScript do Bootstrap -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<!--
 <script>
 	$('#myModal').modal('show');
-</script>
+</script>-->
