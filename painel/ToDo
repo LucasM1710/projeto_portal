@@ -36,10 +36,21 @@ Tela Inicial Area do Cliente(Apenas para cliente){
 - Criando Body (imagem área do cliente + tabela){
     - Posionar elemento de área do cliente (link saber mais + botão Entrar em contato/solicitar orçamento) OK
         - Verificar links dos botões e valores do banco de dados (Posicionar nome do usuário) OK
-    - Incluir elementos de texto e imagens para consultar certificados e padrões(verificar como obter essa informação e se será possível)
+
+    - Incluir elementos de texto e imagens para consultar certificados e padrões(verificar como obter essa informação e se será possível){
+        Ao clicar nos certificados padroes exibir apenas as pastas de padroes{
+            realizar verificaçõs para caso em que seja calibração e caso que seja padrão
+            realizar verificações com base nos ids que o cliente tenha acesso, não permitir outros ids fora dos que o cliente tem acesso
+        }
+    }
+   
 }
 - Ajustar fontes e tamanho, cores
-- Aplicar responsivo
+- Aplicar responsivo{
+    - botao grande de orçamento
+    - nos textos e tamanhos das imagens pastas e padrões
+    - na distância dos elementos de pastas e padrões
+}
 - Testar
 -----------------------------------------------------------------------------
 - Criar uma nova formatação para tabela com base no layout{

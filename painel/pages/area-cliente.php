@@ -1,249 +1,55 @@
-<?php
-	verificaPermissaoMenuC(1);
-	
-	if(isset($_GET['loggout'])){
-		Painel::loggout();
-	}
-	
-
-	
-
-?>
-
-
-<!--
-<div class="box-content">
-
-	
-
-
-Criação do Modal-->
-
-<!-- Botão para abrir o modal -->
-
-
-<!-- O Modal
-<div class="modal" id="myModal">
-	<div class="modal-dialog">
-		<div class="modal-content">
-
-		 Cabeçalho do Modal
-			<div class="modal-header">
-				<h4 class="modal-title">Estamos atualizando a área do cliente.</h4>
-			</div>
-
-			Corpo do Modal 
-			<div class="modal-body">
-				<p>Nosso site está recebendo atualizações em tempo real! Estamos trabalhando para tornar sua experiência ainda melhor.</p>
-				<img src='../Img/construcao.png'/>
-			</div>
-			 Rodapé do Modal
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-			</div>
-			
-
-		</div>
+<!--Final menu-->
+<div class="saudacao">
+	<h4 class="text-md-end">Bem-vindo(a), <?php echo $_SESSION['Nome']; ?></h4>
+	<!--<h4 class="text-md-end">ER Analítica</h4>-->
 	</div>
+
+	<div class="card" style="width: calc(100% - 200px); position: relative; top: 70px; left: 50%; transform: translateX(-50%); padding: 3%; background-image: url('../Img/body_calibracao.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="card-body">
+        <h2 class="card-title" style="font-weight: bold; font-family: 'Montserrat'; font-size:35px; color:#20446C;">Área do cliente</h2>
+        <p class="card-text" style="font-weight: regular; font-family: 'Montserrat'; font-size:17px; color:#20446C;">Precisa atualizar sua calibração?</p>
+		<p class="card-text" style="font-weight: regular; font-family: 'Montserrat'; font-size:17px; color:#20446C;">Solicite seu orçamento!</p>
+        <a target="_blank" href="https://eranalitica.com.br/?utm_source=area-do-cliente&utm_medium=area-do-cliente&utm_campaign=area-do-cliente&utm_id=saiba-mais" class="btn btn-primary" style="background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; font-size:15px; border-color:#EFAF11;">Saber mais</a>
+    </div>
+	
+	</div>
+	<div class="d-flex justify-content-center align-items-center" style="height: 40vh;">
+		<a target="_blank" href="https://eranalitica.com.br/calibracao-equipamentos/?utm_source=area-do-cliente&utm_medium=area-do-cliente&utm_campaign=area-do-cliente&utm_id=solicite-orcamento" class="btn btn-primary" style="width: 50%; background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; font-size:15px; border-color:#EFAF11;">Entrar em contato/Solicitar orçamento</a>
+	</div>
+
+
+	<div class="row justify-content-center align-items-center" style="margin-left: 60px; margin-right: 60px; position: relative; top: -130px;">
+	<div class="texto-inicial">
+		<p class="fs-1">Escolha abaixo o que</p>
+		<p class="fs-1">você necessita consultar</p>
+		<p class="text-start">Na Área do Cliente você encontra</p>
+		<p class="text-start">seus certificados e padrões de maneira rápida e prática</p>
+	</div>
+    <div class="col-sm-4 mb-3" style="background-image: url('../Img/folder.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 400px;">
+
+
+        <div class="card-body2">
+            <h5 class="card-title"><b>Veja aqui seus</b></h5>
+            <h5><b>certificados.</b></h5>
+			<br/>
+            <p class="card-text" style="font-size:14px;">Acesse seus certificados</p>
+            <p class="card-text" style="font-size:14px;">em qualquer momento</p>
+            <p class="card-text" style="font-size:14px;">de qualquer lugar</p>
+			<br/>
+			<p><a href="https://localhost/projeto_portal/painel/arquivo-cliente" class="btn btn-primary" style="font-size:12px; background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; border-color:#EFAF11;">Baixar certificados</a></p>
+        </div>
+    </div>
+
+    <div class="col-sm-4 mb-3" style="background-image: url('../Img/peso.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 400px;">
+        <div class="card-body2">
+		<h5 class="card-title"><b>Veja nossos</b></h5>
+            <h5><b>padrões.</b></h5>
+			<br/>
+            <p class="card-text" style="font-size:14px;">Precisa verificar os</p>
+            <p class="card-text" style="font-size:14px;">padrões utilizados na</p>
+            <p class="card-text" style="font-size:14px;">sua calibração?</p>
+			<br/>
+			<p><a href="#" class="btn btn-primary" style="font-size:12px; background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; border-color:#EFAF11;">Acessar padrões</a></p>
+        </div>
+    </div>
 </div>
-
-Final do Modal-->
-
-<!--
-<div class="nome-user">
-<h2>Olá, <?php echo $_SESSION['Nome']; ?></h2>
-</div>
-<br/>
-
-<div class="busca">
-		<h4><i class="fa fa-search"></i> Realizar uma busca</h4>
-		<form method="post">
-			<input placeholder ="Procure pelo nome da pasta..." type = "text" name = "busca">
-			<input type="submit" name="acao" value="Buscar">	
-		</form>
-</div>busca-->
-<?php
-	
-	$empresa = $_SESSION['Empresa'];
-	$explode = explode(', ',$empresa);
-	
-
-	foreach ($explode as $value) {
-
-
-		$query = "SELECT * FROM tb_pastas WHERE '$value' = `nome`";
-		
-		
-		if(isset($_POST['acao'])){
-			$busca = $_POST['busca'];
-			$query = " SELECT * FROM tb_pastas WHERE '$value' = `nome`";
-			$query .= " and '$value' like '%$busca%'";
-		
-		}
-			$sql = MySql::conectar()->prepare($query);
-			$sql->execute();
-			$pastas = $sql->fetchAll();
-
-			
-
-			
-	?>
-
-		<?php	
-			foreach ($pastas as $key => $value) {
-			//$nomePasta = Painel::select('tb_pastas','id=?',array($value['pasta_id']))['nome'];
-							
-		?>	
-		<!--
-				<div class="pastasedit">
-				<a class="btn edit" style="background: white; font-size: 50px;" href="<?php echo INCLUDE_PATH_PAINEL ?>pastas?id=<?php echo $value['id'];?>"><i class="fas fa-folder"></i></a> <?php echo $value['nome'];?>
-				<hr>
-				</div>
-
-		<?php }}?>
-
-<?php
-		
-		
-
-		//$query.="WHERE `pasta_id` == $empresa";
-			
-	
-		
-			
-?>			
-			
-			<?php
-				if(isset($_POST['acao'])){
-			?>
-			<div class ="wraper-table" >
-				<table>
-					<br/>
-					<tr>
-						<td>Arquivo</td>
-						<td>Descrição</td>
-						<td></td>
-					</tr>
-					<div class="voltar">
-					<a <?php selecionadoMenu('area-cliente');?> href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente"><i class="fas fa-arrow-left"></i> Voltar</a>
-					</div>
-			<?php }?>
-					<?php
-
-					if(isset($_POST['acao'])){
-						foreach ($explode as $key => $value) {
-						
-						
-						
-						$busca = $_POST['busca'];
-						
-						$query2 = " SELECT * FROM tb_arquivos WHERE '$value' = `pasta`";
-						$query2 .= " and arquivo like '%$busca%'";
-
-						$query3 = " SELECT * FROM tb_padrao WHERE '$value' = `pasta`";
-						$query3 .= " and arquivo like '%$busca%'";
-
-						$query4 = " SELECT * FROM tb_equipamentos WHERE '$value' = `pasta`";
-						$query4 .= " and arquivo like '%$busca%'";
-
-						$query5 = " SELECT * FROM tb_calibracao WHERE '$value' = `pasta`";
-						$query5 .= " and arquivo like '%$busca%'";
-						
-						$sql = MySql::conectar()->prepare($query2);
-						$sql->execute();
-						$arquivos = $sql->fetchAll();
-
-						$sql = MySql::conectar()->prepare($query3);
-						$sql->execute();
-						$arquivos3 = $sql->fetchAll();
-
-						$sql = MySql::conectar()->prepare($query4);
-						$sql->execute();
-						$arquivos4 = $sql->fetchAll();
-
-						$sql = MySql::conectar()->prepare($query5);
-						$sql->execute();
-						$arquivos5 = $sql->fetchAll();
-						//$nomePasta = Painel::select('tb_pastas','id=?',array($value['pasta_id']))['nome'];
-						
-						
-				
-					?>
-					<?php
-						foreach ($arquivos as $key2 => $value2) {
-
-					?>
-					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
-						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
-    			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
-
-
-					</tr>
-
-					<?php }?>
-
-					<?php
-						foreach ($arquivos3 as $key2 => $value2) {
-
-					?>
-					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
-						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
-    			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
-
-
-					</tr>
-
-					<?php }?>
-
-					<?php
-						foreach ($arquivos4 as $key2 => $value2) {
-
-					?>
-					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
-						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
-    			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
-
-
-					</tr>
-
-					<?php }?>
-
-					<?php
-						foreach ($arquivos5 as $key2 => $value2) {
-
-					?>
-					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
-						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
-    			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
-
-
-					</tr>
-
-					<?php }?>
-
-
-
-
-
-				<?php }}?>
-				</table>
-
-			</div>
-		</div>
-Incluindo o JavaScript do Bootstrap -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<!--
-<script>
-	$('#myModal').modal('show');
-</script>-->

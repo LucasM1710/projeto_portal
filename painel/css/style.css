@@ -291,9 +291,9 @@ header{
 }
 
 .content{
-	width: calc(100% - 250px);
+	width: calc(100%);
 	position: relative;
-	left: 250px;
+	
 	padding: 2%;
 
 }
@@ -808,11 +808,38 @@ form .form-group-login:nth-of-type(2){
 	font-family: 'Montserrat'; 
 	font-size:25px;
 }
+.card-body2 {
+    position: relative;
+    top: 100px;
+}
+
+.card-body2 h5,
+.card-body2 p{
+    text-align: justify;
+    max-width: 80%; /* Ajuste a largura máxima conforme necessário */
+    margin: 0 auto; /* Centralizar o texto horizontalmente */
+	color:white;
+}
+
+.texto-inicial{
+	margin-top:20px;
+	margin-left:560px;
+
+}
+.texto-inicial .fs-1{
+	font-weight: bold; 
+	font-family: 'Montserrat';
+}
+.texto-inicial .text-start{
+	margin-bottom:0;
+	font-family: 'Montserrat';
+}
+
 
 @media screen and (max-width: 1440px){
 
 
-	.box-content{
+.box-content{
 	background: white;
 	padding: 100px 20px;
 	position: relative;
