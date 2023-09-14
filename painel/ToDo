@@ -39,18 +39,27 @@ Tela Inicial Area do Cliente(Apenas para cliente){
 
     - Incluir elementos de texto e imagens para consultar certificados e padrões(verificar como obter essa informação e se será possível){
         Ao clicar nos certificados padroes exibir apenas as pastas de padroes{
-            realizar verificaçõs para caso em que seja calibração e caso que seja padrão
-            realizar verificações com base nos ids que o cliente tenha acesso, não permitir outros ids fora dos que o cliente tem acesso
+            realizar verificaçõs para caso em que seja calibração e caso que seja padrão OK
+            realizar verificações com base nos ids que o cliente tenha acesso, não permitir outros ids fora dos que o cliente tem acesso OK
         }
     }
    
 }
-- Ajustar fontes e tamanho, cores
+- Ajustar fontes e tamanho, cores OK
 - Aplicar responsivo{
     - botao grande de orçamento
     - nos textos e tamanhos das imagens pastas e padrões
     - na distância dos elementos de pastas e padrões
+    obs esses serão os tamanhos:
+    - 1848 usuário OK, banner área do cliente OK, botão solicitar orçamento OK, blocos calibração e padrão OK
+    - 1440 usuário OK, banner área do cliente OK, botão solicitar orçamento OK, blocos calibração e padrão OK
+    - 1200 usuário OK, banner área do cliente OK, botão solicitar orçamento OK, blocos calibração e padrão OK
+    - 1024 usuário OK, banner área do cliente OK, botão solicitar orçamento OK, blocos calibração e padrão OK
+    - 768 usuário OK, banner área do cliente N, botão solicitar orçamento OK, blocos calibração e padrão N
+    - 375 usuário N, banner área do cliente N, botão solicitar orçamento N, blocos calibração e padrão N
+    - 320 usuário N, banner área do cliente N, botão solicitar orçamento N, blocos calibração e padrão N
 }
+- Ajustar links de navegação (voltar)
 - Testar
 -----------------------------------------------------------------------------
 - Criar uma nova formatação para tabela com base no layout{

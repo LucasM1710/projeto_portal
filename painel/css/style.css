@@ -297,6 +297,13 @@ header{
 	padding: 2%;
 
 }
+.content2{
+	width: calc(100% - 250px);
+	position: relative;
+	left: 250px;
+	padding: 2%;
+
+}
 
 
 
@@ -829,6 +836,7 @@ form .form-group-login:nth-of-type(2){
 .texto-inicial .fs-1{
 	font-weight: bold; 
 	font-family: 'Montserrat';
+	line-height: 0.9;
 }
 .texto-inicial .text-start{
 	margin-bottom:0;
@@ -906,11 +914,48 @@ form .form-group-login:nth-of-type(2){
 	box-shadow: 10px 10px 5px #888888;
 	
 	}
+	.texto-inicial{
+		position: relative;
+		right: 80px;
+		top:40px;
+	}
+	.card-body2 p{
+		font-size: 14px !important;
+	}
 
 @media screen and (max-width: 1200px){
 	.box-metrica-single{
 		width: 100%;
 	}
+	#img-calibracao {
+		position: relative;
+		right: 50px;
+	}
+	#img-padrao {
+		position: relative;
+		left: 50px;
+	}
+	.texto-inicial{
+		position: relative;
+		right: 70px;
+		top:40px;
+	}
+	.card-body2  a{
+		font-size: 10px !important;
+	}
+	.card-body2 p{
+		font-size: 12px !important;
+	}
+	.card-body2 h5{
+		font-size: 20px !important;
+	}
+	.card-body2{
+		position: relative;
+		right: 5px;
+		top: 105px;
+		
+	}
+	
 }
 
 @media screen and (max-width: 1024px){
@@ -1113,6 +1158,36 @@ form .form-group-login:nth-of-type(2){
 		position: relative;
 		top:0px;
 		left: 10px;
+	}
+	.texto-inicial{
+		position: relative;
+		right: 110px;
+		top:20px;
+	}
+	#img-calibracao {
+		position: relative;
+		right: 50px;
+		width: 410px;
+	}
+	#img-padrao {
+		position: relative;
+		left: 50px;
+		width: 410px;
+	}
+	.card-body2  a{
+		font-size: 10px !important;
+	}
+	.card-body2 p{
+		font-size: 12px !important;
+	}
+	.card-body2 h5{
+		font-size: 20px !important;
+	}
+	.card-body2{
+		position: relative;
+		right: 5px;
+		top: 105px;
+		
 	}
 }
 
@@ -1338,7 +1413,38 @@ form .form-group-login:nth-of-type(2){
 .nome-user h2{
 	display: none;
 }
+.texto-inicial{
+	position: relative;
+	right: 190px;
+	top:50px;
+}
+
+
+
+}
+}
+@media screen and (max-width: 375px){
+
+	.texto-inicial{
+		position: relative;
+		right: 290px;
+		top:50px;
+		font-size: 18px;
+	}
+	.texto-inicial p{
+		
+		font-size: 17px;
+	}
 
 }
 
+@media screen and (max-width: 320px){
+	.texto-inicial{
+		position: relative;
+		right: 290px;
+		top:50px;
+	}
+	.texto-inicial p{
+		font-size: 15px;
+	}
 }

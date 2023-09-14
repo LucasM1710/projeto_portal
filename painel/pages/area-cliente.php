@@ -22,34 +22,36 @@
 	<div class="texto-inicial">
 		<p class="fs-1">Escolha abaixo o que</p>
 		<p class="fs-1">você necessita consultar</p>
+		<br/>
 		<p class="text-start">Na Área do Cliente você encontra</p>
 		<p class="text-start">seus certificados e padrões de maneira rápida e prática</p>
 	</div>
-    <div class="col-sm-4 mb-3" style="background-image: url('../Img/folder.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 400px;">
 
 
+
+    <div id="img-calibracao" class="col-sm-4 mb-3" style="background-image: url('../Img/folder.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 400px;">
         <div class="card-body2">
             <h5 class="card-title"><b>Veja aqui seus</b></h5>
             <h5><b>certificados.</b></h5>
 			<br/>
-            <p class="card-text" style="font-size:14px;">Acesse seus certificados</p>
-            <p class="card-text" style="font-size:14px;">em qualquer momento</p>
-            <p class="card-text" style="font-size:14px;">de qualquer lugar</p>
+            <p class="card-text" style="font-size:16px;">Acesse seus certificados</p>
+            <p class="card-text" style="font-size:16px;">em qualquer momento</p>
+            <p class="card-text" style="font-size:16px;">de qualquer lugar</p>
 			<br/>
-			<p><a href="https://localhost/projeto_portal/painel/arquivo-cliente" class="btn btn-primary" style="font-size:12px; background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; border-color:#EFAF11;">Baixar certificados</a></p>
+			<p><a <?php selecionadoMenu('arquivo-cliente');?> href="<?php echo INCLUDE_PATH_PAINEL?>arquivo-cliente" class="btn btn-primary" style="font-size:14px; background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; border-color:#EFAF11;">Baixar certificados</a></p>
         </div>
     </div>
 
-    <div class="col-sm-4 mb-3" style="background-image: url('../Img/peso.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 400px;">
+    <div id="img-padrao" class="col-sm-4 mb-3" style="background-image: url('../Img/peso.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 400px;">
         <div class="card-body2">
 		<h5 class="card-title"><b>Veja nossos</b></h5>
             <h5><b>padrões.</b></h5>
 			<br/>
-            <p class="card-text" style="font-size:14px;">Precisa verificar os</p>
-            <p class="card-text" style="font-size:14px;">padrões utilizados na</p>
-            <p class="card-text" style="font-size:14px;">sua calibração?</p>
+            <p class="card-text" style="font-size:16px;">Precisa verificar os</p>
+            <p class="card-text" style="font-size:16px;">padrões utilizados na</p>
+            <p class="card-text" style="font-size:16px;">sua calibração?</p>
 			<br/>
-			<p><a href="#" class="btn btn-primary" style="font-size:12px; background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; border-color:#EFAF11;">Acessar padrões</a></p>
+			<p><a <?php selecionadoMenu('arquivos-padroes');?> href="<?php echo INCLUDE_PATH_PAINEL?>arquivos-padroes" class="btn btn-primary" style="font-size:14px; background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; border-color:#EFAF11;">Acessar padrões</a></p>
         </div>
     </div>
 </div>

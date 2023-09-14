@@ -38,7 +38,7 @@
 
 	foreach ($explode as $value) {
 		// Adicione cada valor à cláusula WHERE com a condição NOT LIKE e OR para unir condições
-		$whereClause .= "(nome NOT LIKE 'Padrões%' AND nome = '$value') OR ";
+		$whereClause .= "(nome LIKE 'Padrões%' AND nome = '$value') OR ";
 	}
 
 	// Remova o último " OR " da cláusula WHERE
@@ -113,33 +113,33 @@
 						
 						$busca = $_POST['busca'];
 						
-						$query2 = " SELECT * FROM tb_arquivos WHERE '$value' = `pasta`";
-						$query2 .= " and arquivo like '%$busca%'";
+						/*$query2 = " SELECT * FROM tb_arquivos WHERE '$value' = `pasta`";
+						$query2 .= " and arquivo like '%$busca%'";*/
 
-						/*$query3 = " SELECT * FROM tb_padrao WHERE '$value' = `pasta`";
-						$query3 .= " and arquivo like '%$busca%'";*/
+						$query3 = " SELECT * FROM tb_padrao WHERE '$value' = `pasta`";
+						$query3 .= " and arquivo like '%$busca%'";
 
-						$query4 = " SELECT * FROM tb_equipamentos WHERE '$value' = `pasta`";
-						$query4 .= " and arquivo like '%$busca%'";
+						/*$query4 = " SELECT * FROM tb_equipamentos WHERE '$value' = `pasta`";
+						$query4 .= " and arquivo like '%$busca%'";*/
 
-						$query5 = " SELECT * FROM tb_calibracao WHERE '$value' = `pasta`";
-						$query5 .= " and arquivo like '%$busca%'";
+						/*$query5 = " SELECT * FROM tb_calibracao WHERE '$value' = `pasta`";
+						$query5 .= " and arquivo like '%$busca%'";*/
 						
-						$sql = MySql::conectar()->prepare($query2);
+						/*$sql = MySql::conectar()->prepare($query2);
 						$sql->execute();
-						$arquivos = $sql->fetchAll();
+						$arquivos = $sql->fetchAll();*/
 
-						/*$sql = MySql::conectar()->prepare($query3);
+						$sql = MySql::conectar()->prepare($query3);
 						$sql->execute();
-						$arquivos3 = $sql->fetchAll();*/
+						$arquivos3 = $sql->fetchAll();
 
-						$sql = MySql::conectar()->prepare($query4);
+						/*$sql = MySql::conectar()->prepare($query4);
 						$sql->execute();
-						$arquivos4 = $sql->fetchAll();
+						$arquivos4 = $sql->fetchAll();*/
 
-						$sql = MySql::conectar()->prepare($query5);
+						/*$sql = MySql::conectar()->prepare($query5);
 						$sql->execute();
-						$arquivos5 = $sql->fetchAll();
+						$arquivos5 = $sql->fetchAll();*/
 						//$nomePasta = Painel::select('tb_pastas','id=?',array($value['pasta_id']))['nome'];
 						
 						

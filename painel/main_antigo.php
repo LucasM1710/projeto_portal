@@ -229,7 +229,7 @@
 
 	</header>
 	
-	<div class="content">
+	<div class="content2">
 		<?php Painel::carregarPagina();?>
 
 	</div><!--content-->
