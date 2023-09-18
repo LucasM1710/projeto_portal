@@ -922,6 +922,12 @@ form .form-group-login:nth-of-type(2){
 	.card-body2 p{
 		font-size: 14px !important;
 	}
+	#img-calibracao {
+		width: 450px;
+	}
+	#img-padrao {
+		width: 450px;
+	}
 
 @media screen and (max-width: 1200px){
 	.box-metrica-single{
@@ -929,32 +935,19 @@ form .form-group-login:nth-of-type(2){
 	}
 	#img-calibracao {
 		position: relative;
-		right: 50px;
+		right: -10px;
+		width: 60%;
+		top:60px;
 	}
 	#img-padrao {
 		position: relative;
-		left: 50px;
+		left: 10px;
+		width: 60%;
+		top:80px;
 	}
-	.texto-inicial{
-		position: relative;
-		right: 70px;
-		top:40px;
-	}
-	.card-body2  a{
-		font-size: 10px !important;
-	}
-	.card-body2 p{
-		font-size: 12px !important;
-	}
-	.card-body2 h5{
-		font-size: 20px !important;
-	}
-	.card-body2{
-		position: relative;
-		right: 5px;
-		top: 105px;
-		
-	}
+	
+
+
 	
 }
 
@@ -1039,7 +1032,12 @@ form .form-group-login:nth-of-type(2){
 		text-align: center;
 	}
 
-	nav.mobile2 li{
+	nav.mobile2 li{/*	#img-calibracao {
+		width: 410px;
+	}
+	#img-padrao {
+		width: 410px;
+	}*/
 		font-weight: 300;
 		width: 100%;
 		display: block;
@@ -1079,7 +1077,12 @@ form .form-group-login:nth-of-type(2){
 	}
 	/*Pagina inicial*/
 	.position{
-	position: relative;
+	position: relative;/*	#img-calibracao {
+		width: 410px;
+	}
+	#img-padrao {
+		width: 410px;
+	}*/
 	left: 3%;
 	top:100px;
 
@@ -1166,13 +1169,15 @@ form .form-group-login:nth-of-type(2){
 	}
 	#img-calibracao {
 		position: relative;
-		right: 50px;
-		width: 410px;
+		right: -10px;
+		width: 60%;
+		top:20px;
 	}
 	#img-padrao {
 		position: relative;
-		left: 50px;
-		width: 410px;
+		left: 10px;
+		width: 60%;
+		top:-50px;
 	}
 	.card-body2  a{
 		font-size: 10px !important;
@@ -1418,8 +1423,22 @@ form .form-group-login:nth-of-type(2){
 	right: 190px;
 	top:50px;
 }
-
-
+.card{
+	width: 100% !important;
+	background-size: 100% 100% !important;
+}
+#img-calibracao {
+	position: relative;
+	right: -10px;
+	width: 80%;
+	top:20px;
+}
+#img-padrao {
+	position: relative;
+	left: 10px;
+	width: 80%;
+	top:-50px;
+}
 
 }
 }
@@ -1433,8 +1452,113 @@ form .form-group-login:nth-of-type(2){
 	}
 	.texto-inicial p{
 		
-		font-size: 17px;
+		font-size: 12.1px;
 	}
+	#pagina-inicial{
+		width: 320px;
+		position: relative;
+		right: 32px;
+	}
+	.card{
+		width: 105% !important;
+		height: 130px;
+		background-size: 100% 100% !important;
+	}
+	.card-title {
+		font-size: 18px !important;
+		position: relative;
+		bottom: 15px;
+	}
+	.card-text{
+		font-size: 11px !important;
+		position: relative;
+		bottom: 15px;
+		line-height: 0.8;
+	}
+	#botao-saiba-mais{
+		font-size: 11px !important;
+		position: relative;
+		bottom: 15px;
+		line-height: 0.8;
+	}
+	#botao-orcamento a{
+		width: 100% !important;
+		font-size: 11px !important;
+		position: relative;
+		top:-20px;
+	}
+	#fs1{
+		font-size: 20px !important;
+		position: relative;
+		top: -50px;
+	}
+	.text-start{
+		font-size: 11px !important;
+		position: relative;
+		bottom: 65px;
+		line-height: 2;
+	}
+
+
+
+	/*BAIXAR CERTIFICADOS CALIBRACAO*/
+	#img-calibracao {
+		position: relative;
+		right: 7px;
+		width: 108% !important;
+		top:-60px;
+		background-size: 108% 108% !important;
+	}
+	#texto-pasta{
+		font-size: 17px !important;
+		position: relative;
+		left: -17px;
+		top:5px;
+	}
+	#sub-texto-pasta{
+		font-size: 13px !important;
+		line-height: 1.5;
+		text-align: left;
+		left: -17px;
+		top:-1px;
+	}
+	#acesso-documentos{
+		position: relative;
+		left: -17px;
+	}
+	#nome-user{
+		display: none;
+	}
+
+	/*VEJA NOSSOS PADRÕES*/
+
+
+
+	#img-padrao {
+		position: relative;
+		left: -5px;
+		width: 108% !important;
+		top:-200px;
+		background-size: 108% 108% !important;
+	}
+	#texto-pasta{
+		font-size: 17px !important;
+		position: relative;
+		left: -17px;
+		top:5px;
+	}
+	#sub-texto-pasta{
+		font-size: 13px !important;
+		line-height: 1.5;
+		text-align: left;
+		left: -17px;
+		top:-1px;
+	}
+	#acesso-documentos{
+		position: relative;
+		left: -17px;
+	}
+
 
 }
 
@@ -1444,7 +1568,75 @@ form .form-group-login:nth-of-type(2){
 		right: 290px;
 		top:50px;
 	}
+	#pagina-inicial{
+		right: 45px;
+	}
 	.texto-inicial p{
 		font-size: 15px;
 	}
+	#botao-orcamento{
+		position: relative;
+		top:10px;
+	}
+	#fs1{
+		position: relative;
+		top: -30px !important;
+	}
+	.text-start{
+		position: relative;
+		top: -40px !important;
+	}
+	#img-calibracao {
+		position: relative;
+		right: 25px;
+		width: 100% !important;
+		top:-60px;
+		background-size: 95% 100% !important;
+	}
+	#texto-pasta{
+		font-size: 16px !important;
+		position: relative;
+		left: 0px;
+		top:10px;
+	}
+	#sub-texto-pasta{
+		font-size: 11px !important;
+		line-height: 1.5;
+		text-align: left;
+		left: 0px;
+		top:3px;
+	}
+	#acesso-documentos{
+		position: relative;
+		left: 0px;
+		top:3px;
+	}
+
+
+	#img-padrao {
+		position: relative;
+		left: -22px;
+		width: 100% !important;
+		top:-210px;
+		background-size: 95% 100% !important;
+	}
+	#texto-pasta{
+		font-size: 16px !important;
+		position: relative;
+		left: 0px;
+		top:10px;
+	}
+	#sub-texto-pasta{
+		font-size: 11px !important;
+		line-height: 1.5;
+		text-align: left;
+		left: 0px;
+		top:3px;
+	}
+	#acesso-documentos{
+		position: relative;
+		left: 0px;
+		top:3px;
+	}
+	
 }
