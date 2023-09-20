@@ -59,12 +59,17 @@ Tela Inicial Area do Cliente(Apenas para cliente){
     - 375 usuário Ok, banner área do cliente OK, botão solicitar orçamento Ok, blocos calibração e padrão ok
     - 320 usuário OK, banner área do cliente ok, botão solicitar orçamento ok, blocos calibração e padrão OK
 }
-- Ajustar links de navegação (voltar)
-- Testar
+- Ajustar links de navegação (voltar) OK
+- Testar ok
 -----------------------------------------------------------------------------
 - Criar uma nova formatação para tabela com base no layout{
+    - Inserir o banner do notebook e tabela nas páginas: arquivo-cliente, arquivos-padroes e pastas
+    - Incluir o back-end
     - Verificar como vamos trabalhar com a paginação
+    - Incluir o back-end
+    - Testar
 } 
+
 - Ajustar fontes e tamanho, cores
 - Aplicar responsivo
 - Testar

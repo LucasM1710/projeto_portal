@@ -208,6 +208,6 @@
 
 		<?php }?>
 	</table>
-	<a <?php selecionadoMenu('area-cliente');?> href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente"><i class="fas fa-arrow-left"></i> Voltar</a>
+	<a href="javascript:void(0)" onClick="history.go(-1); return false;"><i class="fas fa-arrow-left"></i> Voltar</a>
 </div>
 </div>

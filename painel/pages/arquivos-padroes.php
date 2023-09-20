@@ -10,23 +10,28 @@
 
 ?>
 
+<!--Saudacao area do cliente-->
+<div class="saudacao">
+	<h4 id="nome-user" class="text-md-end">Bem-vindo(a), <?php echo $_SESSION['Nome']; ?></h4>
+	<!--<h4 class="text-md-end">ER Analítica</h4>-->
+	</div>
 
-<!--
-<div class="box-content">
-
-
-<div class="nome-user">
-<h2>Olá, <?php echo $_SESSION['Nome']; ?></h2>
+	<div class="card" style="width: calc(100% - 200px); position: relative; top: 70px; left: 50%; transform: translateX(-50%); padding: 3%; background-image: url('../Img/body_calibracao.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="card-body">
+        <h2 class="card-title" style="font-weight: bold; font-family: 'Montserrat'; font-size:35px; color:#20446C;">Área do cliente</h2>
+        <p class="card-text" style="font-weight: regular; font-family: 'Montserrat'; font-size:17px; color:#20446C;">Precisa atualizar sua calibração?</p>
+		<p class="card-text" style="font-weight: regular; font-family: 'Montserrat'; font-size:17px; color:#20446C;">Solicite seu orçamento!</p>
+        <a id = "botao-saiba-mais" target="_blank" href="https://eranalitica.com.br/?utm_source=area-do-cliente&utm_medium=area-do-cliente&utm_campaign=area-do-cliente&utm_id=saiba-mais" class="btn btn-primary" style="background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; font-size:15px; border-color:#EFAF11;">Saber mais</a>
+    </div>
+	
+	</div>
 </div>
 <br/>
--->
-<div class="busca">
-		<h4><i class="fa fa-search"></i> Realizar uma busca</h4>
-		<form method="post">
-			<input placeholder ="Procure pelo nome da pasta..." type = "text" name = "busca">
-			<input type="submit" name="acao" value="Buscar">	
-		</form>
-</div>
+<br/>
+<!----------------------------------->
+
+
+<!-----Tabela de pastas relacionadas com consulta----->
 <?php
 	
 	
@@ -63,34 +68,83 @@
 			
 
 			
-	?>
+?>
 
-		<?php	
-			foreach ($pastas as $key => $value) {
-			//$nomePasta = Painel::select('tb_pastas','id=?',array($value['pasta_id']))['nome'];
-							
-		?>	
-		
-				<div class="pastasedit">
-				<a class="btn edit" style="background: white; font-size: 50px;" href="<?php echo INCLUDE_PATH_PAINEL ?>pastas?id=<?php echo $value['id'];?>"><i class="fas fa-folder"></i></a> <?php echo $value['nome'];?>
-				<hr>
-				</div>
 
-		<?php }?>
+<div class ="wraper-table" style="width: calc(100% - 250px); position: relative; left: 50%; transform: translateX(-50%); padding: 10px 8px;">
+				
+		<table>
+			<br/>
+				
+				<tr >
 
-<?php
-		
+					<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">Nome da pasta</td>
+					<td><div class="input-group mb-0.5">
+					<input id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar padrões" aria-label="Pesquisar padrões" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6;">
+					<button style="background-color: #daecf5; opacity: 0.5;" class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+					</div></td>
+				</tr>
+					
+				<?php
+					foreach ($pastas as $key => $value) {
+
+				
+				
+				?>
+				
+				<tr>
+					<td>
+					<div class="pastasedit">
+						
+						<a class="btn edit" style="background: white; font-size: 50px;" href="<?php echo INCLUDE_PATH_PAINEL ?>pastas?id=<?php echo $value['id'];?>"><i class="fas fa-folder"></i></a> <?php echo $value['nome'];?>
+					
+					</div>
+					</td>
+					
+				</tr>
+				<?php }?>
+		</table>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<li class="page-item">
+				<a class="page-link" href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+				</li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+				<a class="page-link" href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+				</li>
+			</ul>
+		</nav>
+				
+		<a href="javascript:void(0)" onClick="history.go(-1); return false;"><i class="fas fa-arrow-left"></i> Voltar</a>
+	</div>		
+<!----------------------------------->
 		
 
-		//$query.="WHERE `pasta_id` == $empresa";
-			
-	
+
 		
-			
-?>			
+
+
+
+
+
+
+
+
+
+
+
+
 			
 			<?php
 				if(isset($_POST['acao'])){
+				/*Buscar arquivos na página das pastas de calibração. Vamos manter dessa forma? (Analisar código)*/
 			?>
 			<div class ="wraper-table" >
 				<table>
@@ -211,7 +265,7 @@
 
 				<?php }}?>
 				</table>
-
+				
 			</div>
 		</div>
 
