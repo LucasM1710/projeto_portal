@@ -24,14 +24,47 @@
 ?>
 
 
-<div class="box-content">
-	<div class="busca">
-		<h4><i class="fa fa-search"></i> Realizar uma busca</h4>
-		<form method="post">
-			<input placeholder ="Procure por: Titulo..."type = "text" name = "busca">
-			<input type="submit" name="acao" value="Buscar">
-		</form>
-	</div><!--busca-->
+<!--Saudacao area do cliente-->
+<div class="saudacao">
+	<h4 id="nome-user" class="text-md-end">Bem-vindo(a), <?php echo $_SESSION['Nome']; ?></h4>
+	<!--<h4 class="text-md-end">ER Analítica</h4>-->
+	</div>
+
+	<div class="card" style="width: calc(100% - 200px); position: relative; top: 70px; left: 50%; transform: translateX(-50%); padding: 3%; background-image: url('../Img/body_calibracao.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="card-body">
+        <h2 class="card-title" style="font-weight: bold; font-family: 'Montserrat'; font-size:35px; color:#20446C;">Área do cliente</h2>
+        <p class="card-text" style="font-weight: regular; font-family: 'Montserrat'; font-size:17px; color:#20446C;">Precisa atualizar sua calibração?</p>
+		<p class="card-text" style="font-weight: regular; font-family: 'Montserrat'; font-size:17px; color:#20446C;">Solicite seu orçamento!</p>
+        <a id = "botao-saiba-mais" target="_blank" href="https://eranalitica.com.br/?utm_source=area-do-cliente&utm_medium=area-do-cliente&utm_campaign=area-do-cliente&utm_id=saiba-mais" class="btn btn-primary" style="background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; font-size:15px; border-color:#EFAF11;">Saber mais</a>
+    </div>
+	
+	</div>
+</div>
+<br/>
+<br/>
+<!----------------------------------->
+
+
+<div class ="wraper-table" style="width: calc(100% - 250px); position: relative; left: 50%; transform: translateX(-50%); padding: 10px 8px;">
+				
+	<table>
+		<br/>
+						
+			<tr >
+		
+				<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">ARQUIVO</td>
+				<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">DESCRIÇÃO</td>
+				<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">DATA DE UPLOAD</td>
+				<td><div class="input-group mb-0.5">
+				<form method="post" style="text-align: center;">
+				<div style="display: inline-flex;">
+					<input name="busca" id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar padrões" aria-label="Pesquisar padrões" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6;">
+					<button name="acao" style="background-color: #daecf5; opacity: 0.5;" class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+				</div>
+				</form>
+				</div></td>
+			</tr>
+
 	<?php
 		$empresa = $arquivo['nome'];
 		$query = " SELECT * FROM tb_arquivos WHERE '$empresa' = `pasta`";
@@ -86,17 +119,7 @@
 
 
 	?>
-<div class ="wraper-table">
-	<table>
-		<br/>
-		
-		<tr>
-
-			<td>Arquivo</td>
-			<td>Descrição</td>
-			<td>Data de upload</td>
-			<td></td>
-		</tr>
+	
 
 		<?php
 			foreach ($arquivos as $key => $value) {
@@ -110,15 +133,13 @@
 		?>
 		
 		<tr>
-			<td title="<?php echo $value['titulo'];?>"><?php if(strlen($value['titulo']) > 40){
+			<td title="<?php echo $value['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value['arquivo']; ?>"><?php if(strlen($value['titulo']) > 40){
 					echo mb_substr($value['titulo'], 0,40)."...";	
 				}else{
 					echo $value['titulo'];
-				}?></td>
+				}?></a></td>
 			<td><?php echo $value ['descricao']; ?></td>
 			<td><?php echo $value ['data']; ?></td>
-			<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value['arquivo']; ?>">Abrir</a></td>
-
 
 		</tr>
 
@@ -138,14 +159,14 @@
 		?>
 		
 		<tr>
-			<td title="<?php echo $value['titulo'];?>"><?php if(strlen($value['titulo']) > 40){
+		<td title="<?php echo $value['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value['arquivo']; ?>"><?php if(strlen($value['titulo']) > 40){
 					echo mb_substr($value['titulo'], 0,40)."...";	
 				}else{
 					echo $value['titulo'];
-				}?></td>
+				}?></a></td>
 			<td><?php echo $value ['descricao']; ?></td>
 			<td><?php echo $value ['data']; ?></td>
-			<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value['arquivo']; ?>">Abrir</a></td>
+		
 
 
 		</tr>
@@ -166,14 +187,14 @@
 		?>
 		
 		<tr>
-			<td title="<?php echo $value['titulo'];?>"><?php if(strlen($value['titulo']) > 40){
+			<td title="<?php echo $value['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value['arquivo']; ?>"><?php if(strlen($value['titulo']) > 40){
 					echo mb_substr($value['titulo'], 0,40)."...";	
 				}else{
 					echo $value['titulo'];
-			}?></td>
+				}?></a></td>
 			<td><?php echo $value ['descricao']; ?></td>
 			<td><?php echo $value ['data']; ?></td>
-			<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value['arquivo']; ?>">Abrir</a></td>
+			
 
 
 		</tr>
@@ -194,20 +215,41 @@
 		?>
 		
 		<tr>
-			<td title="<?php echo $value['titulo'];?>"><?php if(strlen($value['titulo']) > 40){
+			<td title="<?php echo $value['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value['arquivo']; ?>"><?php if(strlen($value['titulo']) > 40){
 					echo mb_substr($value['titulo'], 0,40)."...";	
 				}else{
 					echo $value['titulo'];
-			}?></td>
+				}?></a></td>
 			<td><?php echo $value ['descricao']; ?></td>
 			<td><?php echo $value ['data']; ?></td>
-			<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value['arquivo']; ?>">Abrir</a></td>
+	
 
 
 		</tr>
 
 		<?php }?>
 	</table>
-	<a href="javascript:void(0)" onClick="history.go(-1); return false;"><i class="fas fa-arrow-left"></i> Voltar</a>
+		<!--pagina de navegação-->
+		<nav id="pagination" aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<li class="page-item">
+				<a class="page-link" href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+				</li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+				<a class="page-link" href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+				</li>
+			</ul>
+		</nav>
+				
+		<a href="javascript:void(0)" onClick="history.go(-1); return false;"><i class="fas fa-arrow-left"></i> Voltar</a>
+	</div>		
+<!----------------------------------->
 </div>
 </div>

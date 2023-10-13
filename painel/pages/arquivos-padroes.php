@@ -31,44 +31,6 @@
 <!----------------------------------->
 
 
-<!-----Tabela de pastas relacionadas com consulta----->
-<?php
-	
-	
-	$empresa = $_SESSION['Empresa'];
-	$explode = explode(', ', $empresa);
-
-	// Inicialize uma parte da consulta SQL para a cláusula WHERE
-	$whereClause = " WHERE (";
-
-	foreach ($explode as $value) {
-		// Adicione cada valor à cláusula WHERE com a condição NOT LIKE e OR para unir condições
-		$whereClause .= "(nome LIKE 'Padrões%' AND nome = '$value') OR ";
-	}
-
-	// Remova o último " OR " da cláusula WHERE
-	$whereClause = rtrim($whereClause, " OR ");
-	$whereClause .= ")";
-
-	// Montar a consulta completa
-	$query = "SELECT * FROM tb_pastas" . $whereClause;
-
-	// Verificar se a ação de consulta está definida
-	if (isset($_POST['acao'])) {
-		$busca = $_POST['busca'];
-		
-		// Incluir a condição adicional para a consulta quando a ação está definida
-		$query .= " AND nome LIKE '%$busca%'";
-	}
-
-	// Preparar e executar a consulta SQL
-	$sql = MySql::conectar()->prepare($query);
-	$sql->execute();
-	$pastas = $sql->fetchAll();
-			
-
-			
-?>
 
 
 <div class ="wraper-table" style="width: calc(100% - 250px); position: relative; left: 50%; transform: translateX(-50%); padding: 10px 8px;">
@@ -78,13 +40,55 @@
 				
 				<tr >
 
-					<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">Nome da pasta</td>
+					<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c; width: 500px;">NOME DA PASTA</td>
 					<td><div class="input-group mb-0.5">
-					<input id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar padrões" aria-label="Pesquisar padrões" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6;">
-					<button style="background-color: #daecf5; opacity: 0.5;" class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+					<form method="post">
+					<div style="display: inline-flex;">
+						<input name="busca" id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar padrões" aria-label="Pesquisar padrões" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6; width:500px;">
+						<button name="acao" style="background-color: #daecf5; opacity: 0.5;" class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+					</div>
+					</form>
 					</div></td>
 				</tr>
+				<!-----Tabela de pastas relacionadas com consulta----->
+				<?php
 					
+					
+					$empresa = $_SESSION['Empresa'];
+					$explode = explode(', ', $empresa);
+
+					// Inicialize uma parte da consulta SQL para a cláusula WHERE
+					$whereClause = " WHERE (";
+
+					foreach ($explode as $value) {
+						// Adicione cada valor à cláusula WHERE com a condição NOT LIKE e OR para unir condições
+						$whereClause .= "(nome LIKE 'Padrões%' AND nome = '$value') OR ";
+					}
+
+					// Remova o último " OR " da cláusula WHERE
+					$whereClause = rtrim($whereClause, " OR ");
+					$whereClause .= ")";
+
+					// Montar a consulta completa
+					$query = "SELECT * FROM tb_pastas" . $whereClause;
+
+					// Verificar se a ação de consulta está definida
+					if (isset($_POST['acao'])) {
+						$busca = $_POST['busca'];
+						
+						// Incluir a condição adicional para a consulta quando a ação está definida
+						$query .= " AND nome LIKE '%$busca%'";
+					}
+
+					// Preparar e executar a consulta SQL
+					$sql = MySql::conectar()->prepare($query);
+					$sql->execute();
+					$pastas = $sql->fetchAll();
+							
+				
+							
+				?>
+				
 				<?php
 					foreach ($pastas as $key => $value) {
 
@@ -104,7 +108,9 @@
 				</tr>
 				<?php }?>
 		</table>
-		<nav aria-label="Page navigation example">
+
+		<!--pagina de navegação-->
+		<nav id="pagination" aria-label="Page navigation example">
 			<ul class="pagination justify-content-center">
 				<li class="page-item">
 				<a class="page-link" href="#" aria-label="Previous">
@@ -126,41 +132,26 @@
 	</div>		
 <!----------------------------------->
 		
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
 			
 			<?php
 				if(isset($_POST['acao'])){
 				/*Buscar arquivos na página das pastas de calibração. Vamos manter dessa forma? (Analisar código)*/
 			?>
-			<div class ="wraper-table" >
-				<table>
-					<br/>
-					<tr>
-						<td>Arquivo</td>
-						<td>Descrição</td>
-						<td></td>
+			<div class ="wraper-table" style="width: calc(100% - 250px); position: relative; left: 50%; transform: translateX(-50%); padding: 10px 8px;">
+			<table>
+			<br/>
+							
+				<tr >
+			
+					<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">ARQUIVO</td>
+					<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">DESCRIÇÃO</td>
+					<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">DATA DE UPLOAD</td>
 					</tr>
-					<div class="voltar">
-					<a <?php selecionadoMenu('area-cliente');?> href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente"><i class="fas fa-arrow-left"></i> Voltar</a>
-					</div>
 			<?php }?>
 					<?php
-
+	
 					if(isset($_POST['acao'])){
+						
 						foreach ($explode as $key => $value) {
 						
 						
@@ -186,6 +177,7 @@
 						$sql = MySql::conectar()->prepare($query3);
 						$sql->execute();
 						$arquivos3 = $sql->fetchAll();
+					
 
 						/*$sql = MySql::conectar()->prepare($query4);
 						$sql->execute();
@@ -204,10 +196,14 @@
 
 					?>
 					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
+					<td title="<?php echo $value2['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>"><?php if(strlen($value2['titulo']) > 40){
+						echo mb_substr($value2['titulo'], 0,40)."...";	
+					}else{
+						echo $value2['titulo'];
+					}?></a></td>
 						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
     			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
+						<td><?php echo $value2 ['data']; ?></td>
 
 
 					</tr>
@@ -216,13 +212,18 @@
 
 					<?php
 						foreach ($arquivos3 as $key2 => $value2) {
+							
 
 					?>
 					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
+					<td title="<?php echo $value2['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>"><?php if(strlen($value2['titulo']) > 40){
+						echo mb_substr($value2['titulo'], 0,40)."...";	
+					}else{
+						echo $value2['titulo'];
+					}?></a></td>
 						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
     			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
+						<td><?php echo $value2 ['data']; ?></td>
 
 
 					</tr>
@@ -234,10 +235,14 @@
 
 					?>
 					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
+					<td title="<?php echo $value2['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>"><?php if(strlen($value2['titulo']) > 40){
+						echo mb_substr($value2['titulo'], 0,40)."...";	
+					}else{
+						echo $value2['titulo'];
+					}?></a></td>
 						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
     			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
+						<td><?php echo $value2 ['data']; ?></td>
 
 
 					</tr>
@@ -249,23 +254,41 @@
 
 					?>
 					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
+					<td title="<?php echo $value2['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>"><?php if(strlen($value2['titulo']) > 40){
+						echo mb_substr($value2['titulo'], 0,40)."...";	
+					}else{
+						echo $value2['titulo'];
+					}?></a></td>
 						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
     			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
+						<td><?php echo $value2 ['data']; ?></td>
 
 
 					</tr>
 
 					<?php }?>
-
+					<?php
+						if(isset($_POST['acao'])){
+					
+					
+					?>
+					<style>
+						.card{
+							display:none;
+						}
+						#pagination{
+							display:none;
+						}
+					</style>
+					<?php  }?>
 
 
 
 
 				<?php }}?>
+			
 				</table>
-				
+			
 			</div>
 		</div>
 

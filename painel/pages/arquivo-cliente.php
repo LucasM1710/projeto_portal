@@ -4,12 +4,11 @@
 	if(isset($_GET['loggout'])){
 		Painel::loggout();
 	}
+
 	
+	$paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+
 ?>
-
-
-
-
 
 <!--Saudacao area do cliente-->
 <div class="saudacao">
@@ -29,63 +28,92 @@
 </div>
 <br/>
 <br/>
-<!----------------------------------->
+<!--------------------------------------------------->
+
+<div class ="wraper-table" style="width: calc(100% - 250px); position: relative; left: 50%; transform: translateX(-50%); padding: 10px 8px;">
+				
+				<table>
+					<br/>
+						
+						<tr >
+		
+							<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c; width: 500px;">NOME DA PASTA</td>
+							<td><div class="input-group mb-0.5">
+							<form method="post">
+							<div style="display: inline-flex;">
+								<input name="busca" id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar padrões" aria-label="Pesquisar padrões" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6; width:500px;">
+								<button name="acao" style="background-color: #daecf5; opacity: 0.5;" class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+							</div>
+							</form>
+							</div></td>
+						</tr>
 
 
 
 
-
-
+					
 <!-----Tabela de pastas relacionadas com consulta----->
 <?php
-	
-	$empresa = $_SESSION['Empresa'];
-	$explode = explode(', ', $empresa);
 
-	// Inicialize uma parte da consulta SQL para a cláusula WHERE
-	$whereClause = " WHERE (";
+		$empresa = $_SESSION['Empresa'];
+		$explode = explode(', ', $empresa);
 
-	foreach ($explode as $value) {
-		// Adicione cada valor à cláusula WHERE com a condição NOT LIKE e OR para unir condições
-		$whereClause .= "(nome NOT LIKE 'Padrões%' AND nome = '$value') OR ";
-	}
+		// Inicialize uma parte da consulta SQL para a cláusula WHERE
+		$whereClause = " WHERE (";
 
-	// Remova o último " OR " da cláusula WHERE
-	$whereClause = rtrim($whereClause, " OR ");
-	$whereClause .= ")";
-
-	// Montar a consulta completa
-	$query = "SELECT * FROM tb_pastas" . $whereClause;
-
-	// Verificar se a ação de consulta está definida
-	if (isset($_POST['acao'])) {
-		$busca = $_POST['busca'];
+		foreach ($explode as $value) {
+			// Adicione cada valor à cláusula WHERE com a condição NOT LIKE e OR para unir condições
+			$whereClause .= "(nome NOT LIKE 'Padrões%' AND nome = '$value') OR ";
 		
-		// Incluir a condição adicional para a consulta quando a ação está definida
-		$query .= " AND nome LIKE '%$busca%'";
-	}
+		}
+		// Remova o último " OR " da cláusula WHERE
+		$whereClause = rtrim($whereClause, " OR ");
+		$whereClause .= ")";
+		$itensPorPagina = 5; 
+		// Montar a consulta completa
+		$query = "SELECT * FROM tb_pastas" . $whereClause;
+		
+		// Verificar se a ação de consulta está definida
+		if (isset($_POST['acao'])) {
+			$busca = $_POST['busca'];
+			// Incluir a condição adicional para a consulta quando a ação está definida
+			$query .= " AND nome LIKE '%$busca%'";
+		}
 
-	// Preparar e executar a consulta SQL
-	$sql = MySql::conectar()->prepare($query);
-	$sql->execute();
-	$pastas = $sql->fetchAll();
-						
+		// Preparar e executar a consulta SQL
+		$sql = MySql::conectar()->prepare($query);
+		$sql->execute();
+		$pastas = $sql->fetchAll();
+
+		// Defina o número de itens por página e obtenha o número total de resultados
+		// Defina o número desejado de itens por página
+		$totalResultados = count($pastas);
+
+		// Calcule o número total de páginas
+		$totalPaginas = ceil($totalResultados / $itensPorPagina);
+
+		// Obtenha o número da página atual a partir da consulta GET
+		
+		// Define o número de páginas a serem exibidas antes e depois da página atual
+		$paginasAdjacentes = 1;
+
+		// Calcule o índice de início com base na página atual
+		$indiceInicio = ($paginaAtual - 1) * $itensPorPagina;
+
+		// Atualize a consulta SQL para buscar apenas os itens da página atual
+		$query .= " LIMIT $indiceInicio, $itensPorPagina";
+
+		// Preparar e executar a consulta SQL atualizada
+		$sql = MySql::conectar()->prepare($query);
+		$sql->execute();
+		$pastas = $sql->fetchAll();
+								
 ?>
-	<div class ="wraper-table" style="width: calc(100% - 250px); position: relative; left: 50%; transform: translateX(-50%); padding: 10px 8px;">
-				
-		<table>
-			<br/>
-				
-				<tr >
 
-					<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">Nome da pasta</td>
-					<td><div class="input-group mb-0.5">
-					<input id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar padrões" aria-label="Pesquisar padrões" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6;">
-					<button style="background-color: #daecf5; opacity: 0.5;" class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-					</div></td>
-				</tr>
-					
+
+
 				<?php
+			
 					foreach ($pastas as $key => $value) {
 
 				
@@ -95,83 +123,92 @@
 				<tr>
 					<td>
 					<div class="pastasedit">
-						
-						<a class="btn edit" style="background: white; font-size: 50px;" href="<?php echo INCLUDE_PATH_PAINEL ?>pastas?id=<?php echo $value['id'];?>"><i class="fas fa-folder"></i></a> <?php echo $value['nome'];?>
-					
-					</div>
-					</td>
-					
-				</tr>
+                    <a class="btn edit" style="background: white; font-size: 50px;" href="<?php echo INCLUDE_PATH_PAINEL ?>pastas?id=<?php echo $value['id']; ?>"><i class="fas fa-folder"></i></a> <?php echo $value['nome']; ?>
+                </div>
+            </td>
+        </tr>
 				<?php }?>
 		</table>
-		<nav aria-label="Page navigation example">
-			<ul class="pagination justify-content-center">
-				<li class="page-item">
-				<a class="page-link" href="#" aria-label="Previous">
+		
+
+	<!-- Seu código HTML existente para exibir os resultados -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Página de navegação -->
+	<nav id="pagination" aria-label="Page navigation example">
+		<ul class="pagination justify-content-center">
+			<!-- Link "Previous" para voltar 3 páginas -->
+			<li class="page-item">
+				<a class="page-link" href="?pagina=<?php echo max($paginaAtual - 3, 1); ?>" aria-label="Previous">
 					<span aria-hidden="true">&laquo;</span>
 				</a>
-				</li>
-				<li class="page-item"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item">
-				<a class="page-link" href="#" aria-label="Next">
+			</li>
+
+			<?php
+			
+			// Exibe a página 1
+			if ($paginaAtual > $paginasAdjacentes + 1) {
+				echo '<li class="page-item"><a class="page-link" href="'.INCLUDE_PATH_PAINEL.'arquivo-cliente?pagina='.$i.'">'.$i.'</a></li>';
+				echo '<li class="page-item disabled"><span class="page-link">...</span></li>';
+			}
+
+			// Exibe páginas adjacentes à atual
+			for ($i = max($paginaAtual - $paginasAdjacentes, 1); $i <= min($paginaAtual + $paginasAdjacentes, $totalPaginas); $i++) {
+				echo '<li class="page-item ' . ($paginaAtual == $i ? 'active' : '') . '"><a class="page-link" href="'.INCLUDE_PATH_PAINEL.'arquivo-cliente?pagina=' . $i . '">' . $i . '</a></li>';
+			}
+
+			// Exibe a última página
+			if ($paginaAtual < $totalPaginas - $paginasAdjacentes) {
+				echo '<li class="page-item disabled"><span class="page-link">...</span></li>';
+				echo '<li class="page-item"><a class="page-link" href="'.INCLUDE_PATH_PAINEL.'arquivo-cliente?pagina=' . $totalPaginas . '">' . $totalPaginas . '</a></li>';
+			}
+			?>
+
+			<!-- Link "Next" para avançar 3 páginas -->
+			<li class="page-item">
+				<a class="page-link" href="?pagina=<?php echo min($paginaAtual + 3, $totalPaginas); ?>" aria-label="Next">
 					<span aria-hidden="true">&raquo;</span>
 				</a>
-				</li>
-			</ul>
-		</nav>
-				
-		<a href="javascript:void(0)" onClick="history.go(-1); return false;"><i class="fas fa-arrow-left"></i> Voltar</a>
-	</div>		
-<!----------------------------------->
+			</li>
+		</ul>
+	</nav>
+
 		
-				
-				
-			
+		<a href="javascript:void(0)" onClick="history.go(-1); return false;"><i class="fas fa-arrow-left"></i> Voltar</a>
+	</div>
+<!----------------------------------->
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
 
 
 			<?php
-	
-		/*Buscar arquivos na página das pastas de calibração. Vamos manter dessa forma? (Analisar código)*/
-
-			
 				if(isset($_POST['acao'])){
+				/*Buscar arquivos na página das pastas de calibração. Vamos manter dessa forma? (Analisar código)*/
 			?>
-			<div class ="wraper-table" >
-				<table>
-					<br/>
-					<tr>
-						<td>Arquivo</td>
-						<td>Descrição</td>
-						<td></td>
+			<div class ="wraper-table" style="width: calc(100% - 250px); position: relative; left: 50%; transform: translateX(-50%); padding: 10px 8px;">
+			<table>
+			<br/>
+							
+				<tr >
+			
+					<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">ARQUIVO</td>
+					<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">DESCRIÇÃO</td>
+					<td style="font-weight: 600; font-family: 'Montserrat'; padding:2%; color: #20446c;">DATA DE UPLOAD</td>
 					</tr>
-					<div class="voltar">
-					<a <?php selecionadoMenu('area-cliente');?> href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente"><i class="fas fa-arrow-left"></i> Voltar</a>
-					</div>
 			<?php }?>
 
 					<?php
@@ -220,10 +257,14 @@
 
 					?>
 					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
+					<td title="<?php echo $value2['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>"><?php if(strlen($value2['titulo']) > 40){
+						echo mb_substr($value2['titulo'], 0,40)."...";	
+					}else{
+						echo $value2['titulo'];
+					}?></a></td>
 						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
     			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
+						<td><?php echo $value2 ['data']; ?></td>
 
 
 					</tr>
@@ -235,10 +276,14 @@
 
 					?>
 					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
+						<td title="<?php echo $value2['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>"><?php if(strlen($value2['titulo']) > 40){
+							echo mb_substr($value2['titulo'], 0,40)."...";	
+						}else{
+							echo $value2['titulo'];
+						}?></a></td>
 						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
     			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
+						<td><?php echo $value2 ['data']; ?></td>
 
 
 					</tr>
@@ -250,10 +295,14 @@
 
 					?>
 					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
+						<td title="<?php echo $value2['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>"><?php if(strlen($value2['titulo']) > 40){
+							echo mb_substr($value2['titulo'], 0,40)."...";	
+						}else{
+							echo $value2['titulo'];
+						}?></a></td>
 						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
     			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
+						<td><?php echo $value2 ['data']; ?></td>
 
 
 					</tr>
@@ -265,16 +314,33 @@
 
 					?>
 					<tr>
-						<td><?php echo $value2 ['arquivo']; ?></td>
+						<td title="<?php echo $value2['titulo'];?>"><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>"><?php if(strlen($value2['titulo']) > 40){
+							echo mb_substr($value2['titulo'], 0,40)."...";	
+						}else{
+							echo $value2['titulo'];
+						}?></a></td>
 						<td><?php echo str_replace(array("De ", "Do ", "Dos ", "Da ", "Das "),
     			 array("de ", "do ", "dos ", "da ", "das "), ucwords(mb_strtolower($value2 ['descricao']))); ?></td>
-						<td><a target="_blank" href="<?php echo INCLUDE_PATH_PAINEL ?>uploads/<?php echo $value2['arquivo']; ?>">Abrir</a></td>
+						<td><?php echo $value2 ['data']; ?></td>
 
 
 					</tr>
 
 					<?php }?>
-
+					<?php
+						if(isset($_POST['acao'])){
+					
+					
+					?>
+					<style>
+						.card{
+							display:none;
+						}
+						#pagination{
+							display:none;
+						}
+					</style>
+					<?php  }?>
 
 
 
@@ -290,5 +356,3 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-

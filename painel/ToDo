@@ -63,10 +63,13 @@ Tela Inicial Area do Cliente(Apenas para cliente){
 - Testar ok
 -----------------------------------------------------------------------------
 - Criar uma nova formatação para tabela com base no layout{
-    - Inserir o banner do notebook e tabela nas páginas: arquivo-cliente, arquivos-padroes e pastas
-    - Incluir o back-end
-    - Verificar como vamos trabalhar com a paginação
-    - Incluir o back-end
+    - Inserir o banner do notebook e tabela nas páginas: arquivo-cliente, arquivos-padroes e pastas ok
+    - Incluir o back-end: arquivo-cliente(ok), arquivos-padroes(ok), pastas(ok) ok
+    - Verificar como vamos trabalhar com a paginação 
+    - Incluir o back-end arquivo-cliente(), arquivos-padroes(), pastas(){
+        - Conseguir pesquisar dentro de cada página.
+        - Arrumar o btn voltar para voltar ao menu inicial.
+    }
     - Testar
 } 
 
@@ -74,7 +77,7 @@ Tela Inicial Area do Cliente(Apenas para cliente){
 - Aplicar responsivo
 - Testar
 ----------------------------------------------------------------------------
-Atualização 0.0.2
+Atualização 0.0.2 (Renanzinho)
 
 História:
 O Cliente ao entrar na área do cliente, ele GOSTARIA de ter uma opção para inserir uma foto de perfil

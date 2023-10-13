@@ -406,6 +406,15 @@ table tr{
 
 table tr{
 	color: #555;
+	font-family: 'Montserrat';
+	font-weight: 600; 
+}
+
+table tr td a{
+	color: #555;
+	font-family: 'Montserrat';
+	font-weight: 600; 
+
 }
 
 table td{
