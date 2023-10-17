@@ -53,13 +53,15 @@
 	<nav class="navbar navbar-expand-lg">
 		<div class="container-fluid">
 		<a class="navbar-brand" href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente">
-      	<img src="../Img/logo.png" alt="Logo" width="100" height="60" class="d-inline-block align-text-top">
+      	<img id="logoer" src="../Img/logo.png" alt="Logo" width="100" height="60" class="d-inline-block align-text-top" style="margin-left:110px;">
     	</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 			</button>
+			
 			<div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent" style="font-size: 13px;">
 			<ul class="navbar-nav mx-auto mb-2 mb-lg-0" >
+				
 				<!--HOME-->
 				<li class="nav-item mx-3">
 				<a class="nav-link active" aria-current="page" href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente" style="font-family: 'Montserrat',sans-serif; font-size:15px;">HOME</a>
@@ -132,7 +134,7 @@
 				</li>
 			</ul>
 			<a class="navbar-brand" target="_blank" href="https://eranalitica.com.br/wp-content/uploads/2021/02/CERTIFICADO-CAL-0715-ER-ANALITICA.pdf">
-      		<img src="../Img/rbc.png" alt="Logo" width="43" height="74" class="d-inline-block align-text-top">
+      		<img id="rbc" src="../Img/rbc.png" alt="Logo" width="43" height="74" class="d-inline-block align-text-top" style="margin-right:110px;">
     		</a>
 			</div>
 			

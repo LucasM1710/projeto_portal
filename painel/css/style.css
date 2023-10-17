@@ -953,6 +953,12 @@ form .form-group-login:nth-of-type(2){
 	}
 
 @media screen and (max-width: 1200px){
+	#logoer{
+		margin-left:0 !important;
+	}
+	#rbc{
+		margin-right:0 !important;
+	}
 	.box-metrica-single{
 		width: 100%;
 	}
@@ -976,6 +982,13 @@ form .form-group-login:nth-of-type(2){
 
 
 @media screen and (max-width: 1024px){
+
+	#logoer{
+		margin-left:0 !important;
+	}
+	#rbc{
+		margin-right:0 !important;
+	}
 
 	.box-single-wraper{
 		width: 100%;
@@ -1223,6 +1236,9 @@ form .form-group-login:nth-of-type(2){
 
 
 @media screen and (max-width: 768px){
+	#logoer{
+		margin-left:0 !important;
+	}
 	.saudacao{
 		float: right;
 		margin-top:-90px;
