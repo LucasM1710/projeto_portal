@@ -14,7 +14,7 @@
 	
 	</div>
 	<div id="botao-orcamento" class="d-flex justify-content-center align-items-center" style="height: 40vh;">
-		<a target="_blank" href="https://eranalitica.com.br/calibracao-equipamentos/?utm_source=area-do-cliente&utm_medium=area-do-cliente&utm_campaign=area-do-cliente&utm_id=solicite-orcamento" class="btn btn-primary" style="width: 50%; background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; font-size:15px; border-color:#EFAF11;">Entrar em contato/Solicitar orçamento</a>
+		<a target="_blank" href="https://eranalitica.com.br/contato/" class="btn btn-primary" style="width: 50%; background-color:#EFAF11; font-weight: bold; font-family: 'Montserrat'; font-size:15px; border-color:#EFAF11;">Entrar em contato/Solicitar orçamento</a>
 	</div>
 
 
