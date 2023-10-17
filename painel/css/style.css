@@ -397,7 +397,7 @@ table{
 table tr:nth-of-type(1){
 	background: #d0d0d0;
 	
-	color: white;
+	color:#045a88;
 }
 
 table tr{
@@ -1464,10 +1464,17 @@ form .form-group-login:nth-of-type(2){
 	width: 80%;
 	top:-50px;
 }
+.wraper-table{
+	width: calc(100% - 50px) !important;
+}
 
 }
 }
 @media screen and (max-width: 375px){
+
+	.wraper-table{
+		width: calc(100% - 50px) !important;
+	}
 
 	.texto-inicial{
 		position: relative;

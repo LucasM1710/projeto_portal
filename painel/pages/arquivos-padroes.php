@@ -5,7 +5,7 @@
 		Painel::loggout();
 	}
 	
-
+	$paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
 	
 
 ?>
@@ -44,12 +44,15 @@
 					<td><div class="input-group mb-0.5">
 					<form method="post">
 					<div style="display: inline-flex;">
-						<input name="busca" id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar padrões" aria-label="Pesquisar padrões" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6; width:500px;">
+						<input name="busca" id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar Padrões/Pasta" aria-label="Pesquisar Padrões/Pasta" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6; width:500px;">
 						<button name="acao" style="background-color: #daecf5; opacity: 0.5;" class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
 					</div>
 					</form>
 					</div></td>
 				</tr>
+
+
+
 				<!-----Tabela de pastas relacionadas com consulta----->
 				<?php
 					
@@ -68,6 +71,7 @@
 					// Remova o último " OR " da cláusula WHERE
 					$whereClause = rtrim($whereClause, " OR ");
 					$whereClause .= ")";
+					$itensPorPagina = 5;
 
 					// Montar a consulta completa
 					$query = "SELECT * FROM tb_pastas" . $whereClause;
@@ -84,7 +88,47 @@
 					$sql = MySql::conectar()->prepare($query);
 					$sql->execute();
 					$pastas = $sql->fetchAll();
+
+					// Defina o número de itens por página e obtenha o número total de resultados
+					// Defina o número desejado de itens por página
+					$totalResultados = count($pastas);
+
+					// Calcule o número total de páginas
+					$totalPaginas = ceil($totalResultados / $itensPorPagina);
+
+					// Obtenha o número da página atual a partir da consulta GET
+					
+					// Define o número de páginas a serem exibidas antes e depois da página atual
+					$paginasAdjacentes = 1;
+
+					if(!isset($_POST['acao'])){
+								
+						if(isset($_GET['pagina'])){
+							$pagina = (int)$_GET['pagina'];
+							if($pagina > $totalPaginas){
+							$pagina = 1;
+						}
 							
+							// Calcule o índice de início com base na página atual
+							$indiceInicio = ($paginaAtual - 1) * $itensPorPagina;
+							// Atualize a consulta SQL para buscar apenas os itens da página atual
+							$query .= "  LIMIT $indiceInicio, $itensPorPagina";
+							/*Eu poderia utilizar o ORDER BY order_id ASC LIMIT para ordernar de forma padrão ao painel*/
+						}else{
+							$pagina = 1;
+							$query.=" ORDER BY id ASC LIMIT 0, $itensPorPagina";
+						}
+					}else{
+						$query.=" ORDER BY id ASC";
+					}
+
+					
+
+					// Preparar e executar a consulta SQL atualizada
+					$sql = MySql::conectar()->prepare($query);
+					$sql->execute();
+					$pastas = $sql->fetchAll();
+										
 				
 							
 				?>
@@ -108,28 +152,48 @@
 				</tr>
 				<?php }?>
 		</table>
-
-		<!--pagina de navegação-->
+		<!-- Página de navegação -->
 		<nav id="pagination" aria-label="Page navigation example">
 			<ul class="pagination justify-content-center">
+				<!-- Link "Previous" para voltar 3 páginas -->
 				<li class="page-item">
-				<a class="page-link" href="#" aria-label="Previous">
-					<span aria-hidden="true">&laquo;</span>
-				</a>
+					<a class="page-link" href="?pagina=<?php echo max($paginaAtual - 3, 1); ?>" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
 				</li>
-				<li class="page-item"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
+
+				<?php
+				
+				// Exibe a página 1
+				if ($paginaAtual > $paginasAdjacentes + 1) {
+					echo '<li class="page-item"><a class="page-link" href="'.INCLUDE_PATH_PAINEL.'arquivos-padroes?pagina='.$i.'">'.$i.'</a></li>';
+					echo '<li class="page-item disabled"><span class="page-link">...</span></li>';
+				}
+
+				// Exibe páginas adjacentes à atual
+				for ($i = max($paginaAtual - $paginasAdjacentes, 1); $i <= min($paginaAtual + $paginasAdjacentes, $totalPaginas); $i++) {
+					echo '<li class="page-item ' . ($paginaAtual == $i ? 'active' : '') . '"><a class="page-link" href="'.INCLUDE_PATH_PAINEL.'arquivos-padroes?pagina=' . $i . '">' . $i . '</a></li>';
+				}
+
+				// Exibe a última página
+				if ($paginaAtual < $totalPaginas - $paginasAdjacentes) {
+					echo '<li class="page-item disabled"><span class="page-link">...</span></li>';
+					echo '<li class="page-item"><a class="page-link" href="'.INCLUDE_PATH_PAINEL.'arquivos-padroes?pagina=' . $totalPaginas . '">' . $totalPaginas . '</a></li>';
+				}
+				?>
+
+				<!-- Link "Next" para avançar 3 páginas -->
 				<li class="page-item">
-				<a class="page-link" href="#" aria-label="Next">
-					<span aria-hidden="true">&raquo;</span>
-				</a>
+					<a class="page-link" href="?pagina=<?php echo min($paginaAtual + 3, $totalPaginas); ?>" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
 				</li>
 			</ul>
 		</nav>
-				
-		<a href="javascript:void(0)" onClick="history.go(-1); return false;"><i class="fas fa-arrow-left"></i> Voltar</a>
-	</div>		
+
+			
+			<a href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente"><i class="fas fa-arrow-left"></i> Voltar</a>
+		</div>
 <!----------------------------------->
 		
 			

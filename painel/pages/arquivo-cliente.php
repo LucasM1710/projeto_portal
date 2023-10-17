@@ -41,7 +41,7 @@
 							<td><div class="input-group mb-0.5">
 							<form method="post">
 							<div style="display: inline-flex;">
-								<input name="busca" id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar padrões" aria-label="Pesquisar padrões" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6; width:500px;">
+								<input name="busca" id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar Certificados/Pasta" aria-label="Pesquisar Certificados/Pasta" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6; width:500px;">
 								<button name="acao" style="background-color: #daecf5; opacity: 0.5;" class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
 							</div>
 							</form>
@@ -70,6 +70,7 @@
 		$whereClause = rtrim($whereClause, " OR ");
 		$whereClause .= ")";
 		$itensPorPagina = 5; 
+		
 		// Montar a consulta completa
 		$query = "SELECT * FROM tb_pastas" . $whereClause;
 		
@@ -79,7 +80,7 @@
 			// Incluir a condição adicional para a consulta quando a ação está definida
 			$query .= " AND nome LIKE '%$busca%'";
 		}
-
+		
 		// Preparar e executar a consulta SQL
 		$sql = MySql::conectar()->prepare($query);
 		$sql->execute();
@@ -97,11 +98,28 @@
 		// Define o número de páginas a serem exibidas antes e depois da página atual
 		$paginasAdjacentes = 1;
 
-		// Calcule o índice de início com base na página atual
-		$indiceInicio = ($paginaAtual - 1) * $itensPorPagina;
+		if(!isset($_POST['acao'])){
+					
+			if(isset($_GET['pagina'])){
+				$pagina = (int)$_GET['pagina'];
+				if($pagina > $totalPaginas){
+				$pagina = 1;
+			}
+				
+				// Calcule o índice de início com base na página atual
+				$indiceInicio = ($paginaAtual - 1) * $itensPorPagina;
+				// Atualize a consulta SQL para buscar apenas os itens da página atual
+				$query .= "  LIMIT $indiceInicio, $itensPorPagina";
+				/*Eu poderia utilizar o ORDER BY order_id ASC LIMIT para ordernar de forma padrão ao painel*/
+			}else{
+				$pagina = 1;
+				$query.=" ORDER BY id ASC LIMIT 0, $itensPorPagina";
+			}
+		}else{
+			$query.=" ORDER BY id ASC";
+		}
 
-		// Atualize a consulta SQL para buscar apenas os itens da página atual
-		$query .= " LIMIT $indiceInicio, $itensPorPagina";
+		
 
 		// Preparar e executar a consulta SQL atualizada
 		$sql = MySql::conectar()->prepare($query);
@@ -185,7 +203,7 @@
 	</nav>
 
 		
-		<a href="javascript:void(0)" onClick="history.go(-1); return false;"><i class="fas fa-arrow-left"></i> Voltar</a>
+		<a href="<?php echo INCLUDE_PATH_PAINEL?>area-cliente"><i class="fas fa-arrow-left"></i> Voltar</a>
 	</div>
 <!----------------------------------->
 

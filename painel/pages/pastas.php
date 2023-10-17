@@ -58,7 +58,7 @@
 				<td><div class="input-group mb-0.5">
 				<form method="post" style="text-align: center;">
 				<div style="display: inline-flex;">
-					<input name="busca" id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar padrões" aria-label="Pesquisar padrões" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6;">
+					<input name="busca" id="campo-pesquisa" type="text" class="form-control" placeholder="Pesquisar Arquivo" aria-label="Pesquisar Arquivo" aria-describedby="button-addon2" style="background-color: #20446c; opacity: 0.6;">
 					<button name="acao" style="background-color: #daecf5; opacity: 0.5;" class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
 				</div>
 				</form>
@@ -229,7 +229,7 @@
 
 		<?php }?>
 	</table>
-		<!--pagina de navegação-->
+		<!--pagina de navegação
 		<nav id="pagination" aria-label="Page navigation example">
 			<ul class="pagination justify-content-center">
 				<li class="page-item">
@@ -246,7 +246,7 @@
 				</a>
 				</li>
 			</ul>
-		</nav>
+		</nav>-->
 				
 		<a href="javascript:void(0)" onClick="history.go(-1); return false;"><i class="fas fa-arrow-left"></i> Voltar</a>
 	</div>		

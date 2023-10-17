@@ -66,16 +66,16 @@ Tela Inicial Area do Cliente(Apenas para cliente){
     - Inserir o banner do notebook e tabela nas páginas: arquivo-cliente, arquivos-padroes e pastas ok
     - Incluir o back-end: arquivo-cliente(ok), arquivos-padroes(ok), pastas(ok) ok
     - Verificar como vamos trabalhar com a paginação 
-    - Incluir o back-end arquivo-cliente(), arquivos-padroes(), pastas(){
-        - Conseguir pesquisar dentro de cada página.
-        - Arrumar o btn voltar para voltar ao menu inicial.
+    - Incluir o back-end arquivo-cliente(ok), arquivos-padroes(ok), pastas(ok){
+        - Conseguir pesquisar dentro de cada página. ok
+        - Arrumar o btn voltar para voltar ao menu inicial. ok
     }
-    - Testar
+    - Testar ok
 } 
 
-- Ajustar fontes e tamanho, cores
-- Aplicar responsivo
-- Testar
+- Ajustar fontes e tamanho, cores ok
+- Aplicar responsivo ok
+- Testar ok
 ----------------------------------------------------------------------------
 Atualização 0.0.2 (Renanzinho)
 
@@ -89,6 +89,7 @@ Desenvolvimento:
     - Criar as validações para tipo e tamanho de imagem a ser cadastrada(O CLIENTE NÃO PODE INSERIR UM ARQUIVO .xlsx, .pdf, etc no perfil)
 }
 
+
 ----------------------------------------------------------------------------
 Atualização 0.0.3
 
@@ -99,7 +100,13 @@ Desenvolvimento:
 - Na tabela de usuário criar uma coluna para 'nome da empresa'
 - Marcar o html no header para posicionar o local que vai ficar a foto
 - Desenvolver todo o back-end para cadastro, alteração do nome da empresa
+----------------------------------------------------------------------------
+Atualização 0.0.4 
 
+Atualizar layout para o lado do administrador do site
+
+
+----------------------------------------------------------------------------
 
 
 
