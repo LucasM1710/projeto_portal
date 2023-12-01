@@ -1,5 +1,6 @@
 <?php
 	include("recaptchalib.php");
+	
 	if(isset($_GET['esqueci']) == false){
 	if(isset($_COOKIE['lembrar'])){
 		$user = $_COOKIE['user'];
